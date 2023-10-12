@@ -2,9 +2,9 @@
 Adam Metz
 
 # UN SDG(s)
-SDG 13: Climate Action
-SDG 12: Responsible Consumption and Production
-SDG 7: Affordable and Clean Energy
+- SDG 13: Climate Action
+- SDG 12: Responsible Consumption and Production
+- SDG 7: Affordable and Clean Energy
 
 # Project idea
 Sustainify is a factory-building/automation video game with a goal to educate players on: causes and impacts of climate change, clean energy production, and responsible consumption.
