@@ -7,7 +7,9 @@ Adam Metz
 - SDG 7: Affordable and Clean Energy
 
 # Project idea
-Sustainify is a factory-building/automation video game with a goal to educate players on: causes and impacts of climate change, clean energy production, and responsible consumption.
+Sustainify is a cookie-clicker game that aims to educate players on climate change through topics such as: sustainable development practices, clean energy sources, and causes and effects of climate change.
 
 # Project background/Business Opportunity
-Climate change is a global problem that grows by the day and will require a global effort to tackle it. One of the most important factors to combat climate change is education surrounding topics such as: the causes and effects of climate change, clean energy production, and responsible resource consumption. Sustainify is a game that aims to educate players on these topics through in game mechanics. 
+Sustainify is a video game that aims to educate players on climate change through topics such as: sustainable development practices, clean energy sources, and causes and effects of climate change. By facilitating the learning experience through a video game, the goal is to provide a more entertaining, and alternative way for the younger audience to learn about and engage in these topics. Sustainify will be a ‘Cookie Clicker’ genre game, where the player clicks to gain points, and invests into passive point generators. With this style of game, the game will be easy to pick up and play, require low hardware requirements to play the game, and easy to provide educational tidbits that aren’t overly impeding to the gameplay.
+
+Sustainify is a video game that aims to educate players on climate change through topics such as: sustainable development practices, clean energy sources, and causes and effects of climate change. By facilitating the learning experience through a video game, the goal is to provide a more entertaining, and alternative way for the younger audience to learn about and engage in these topics. Sustainify will be a ‘Cookie Clicker’ genre game, where the player clicks to gain points, and invests into passive point generators. With this style of game, the game will be easy to pick up and play, require low hardware requirements to play the game, and easy to provide educational tidbits that aren’t overly impeding to the gameplay.
