@@ -32,4 +32,4 @@ func _on_timer_timeout():
 	updatePoints(points_per_second)
 
 func on_generator_purchased(generator : BaseGenerator):
-	print(generator.cost)
+	points_per_second += generator.get_points_per_second()
