@@ -8,3 +8,4 @@ func _ready():
 	self.cost = 100
 	self.points_per_second = 10
 	self.set_generator_name_label()
+	self.set_cost_label()

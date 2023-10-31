@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://c651v7kq6daoc"]
+[gd_scene load_steps=9 format=3 uid="uid://c651v7kq6daoc"]
 
 [ext_resource type="Script" path="res://scenes/Main.gd" id="1_y24vv"]
 [ext_resource type="Texture2D" uid="uid://b0o5vwmdvugfc" path="res://assets/Generator-Dummy-Image.png" id="2_cuce1"]
 [ext_resource type="Texture2D" uid="uid://cdq84fb1nf85d" path="res://assets/Background.png" id="2_w8t11"]
+[ext_resource type="FontFile" uid="uid://cl57fd2n5body" path="res://assets/fonts/pixel font-7.ttf" id="3_0avik"]
 [ext_resource type="Script" path="res://scenes/WindTurbineGenerator.gd" id="3_3in7a"]
 [ext_resource type="Texture2D" uid="uid://wbmls4xd5htk" path="res://assets/Coin.png" id="3_h1xie"]
 [ext_resource type="Script" path="res://scenes/SolarPanelGenerator.gd" id="6_1ult1"]
@@ -34,12 +35,28 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Button"
 
-[node name="PointDisplay" type="RichTextLabel" parent="."]
+[node name="PointsPerSecondLabel" type="Label" parent="."]
 layout_mode = 0
-offset_left = 553.0
-offset_top = 90.0
-offset_right = 591.0
-offset_bottom = 113.0
+offset_left = 448.0
+offset_top = 128.0
+offset_right = 704.0
+offset_bottom = 160.0
+theme_override_fonts/font = ExtResource("3_0avik")
+theme_override_font_sizes/font_size = 35
+text = "1/s"
+horizontal_alignment = 1
+
+[node name="PointsLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 72.0
+offset_right = 896.0
+offset_bottom = 127.0
+theme_override_fonts/font = ExtResource("3_0avik")
+theme_override_font_sizes/font_size = 50
+text = "111"
+horizontal_alignment = 1
+vertical_alignment = 2
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
