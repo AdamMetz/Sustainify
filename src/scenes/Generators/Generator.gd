@@ -4,12 +4,24 @@ class_name BaseGenerator
 
 signal generator_purchased
 
-# Common properties
+# Properties #
+
 var generator_name : String # Must be a unique property
 var cost : int
 var points_per_second : int
 var number_owned : int = 0
 var cost_increase_growth_factor : float = 1.15
+
+# Constructor #
+
+func init(gen_name : String, gen_cost : int, gen_points_per_second : int):
+	self.generator_name = gen_name
+	self.cost = gen_cost
+	self.points_per_second = gen_points_per_second
+	# Setup label nodes
+	self.set_generator_name_label()
+	self.set_cost_label()
+	self.set_points_per_second_label()
 
 # Setters & Getters #
 
@@ -45,8 +57,12 @@ func set_generator_name_label():
 	generator_name_label_node.text = self.generator_name
 	
 func set_number_owned_label():
-	var number_owned_label_node = self.get_node("NumberGeneratorOwnedLabel")
+	var number_owned_label_node = self.get_node("NumberOwnedAndPointsPerSecondContainer/NumberGeneratorOwnedLabel")
 	number_owned_label_node.text = str(self.number_owned) + "x"
+	
+func set_points_per_second_label():
+	var points_per_second_label_node = self.get_node("NumberOwnedAndPointsPerSecondContainer/PointsPerSecondLabel")
+	points_per_second_label_node.text = "+" + str(self.points_per_second) + "/s"
 
 # Signals #
 

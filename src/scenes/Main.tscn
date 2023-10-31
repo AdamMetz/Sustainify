@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://0s5wv4uyw3g1"]
+[gd_scene load_steps=9 format=3 uid="uid://cui2g3w0tf1qp"]
 
 [ext_resource type="Script" path="res://scenes/Main.gd" id="1_y24vv"]
 [ext_resource type="Texture2D" uid="uid://b0o5vwmdvugfc" path="res://assets/Generator-Dummy-Image.png" id="2_cuce1"]
@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://wbmls4xd5htk" path="res://assets/Coin.png" id="3_h1xie"]
 [ext_resource type="Script" path="res://scenes/Generators/WindTurbineGenerator.gd" id="4_13tw6"]
 [ext_resource type="Script" path="res://scenes/Generators/SolarPanelGenerator.gd" id="7_ynbc8"]
-[ext_resource type="Script" path="res://scenes/Generators/HydroDam.gd" id="8_c1d8j"]
+[ext_resource type="Script" path="res://scenes/Generators/HydroDamGenerator.gd" id="8_qmw3r"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -109,10 +109,17 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "10"
 
-[node name="NumberGeneratorOwnedLabel" type="Label" parent="GeneratorsPanelBackground/GeneratorsContainer/WindTurbineGenerator"]
+[node name="NumberOwnedAndPointsPerSecondContainer" type="VBoxContainer" parent="GeneratorsPanelBackground/GeneratorsContainer/WindTurbineGenerator"]
+layout_mode = 2
+
+[node name="NumberGeneratorOwnedLabel" type="Label" parent="GeneratorsPanelBackground/GeneratorsContainer/WindTurbineGenerator/NumberOwnedAndPointsPerSecondContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "0x"
+
+[node name="PointsPerSecondLabel" type="Label" parent="GeneratorsPanelBackground/GeneratorsContainer/WindTurbineGenerator/NumberOwnedAndPointsPerSecondContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 
 [node name="SolarPanelGenerator" type="HBoxContainer" parent="GeneratorsPanelBackground/GeneratorsContainer"]
 layout_mode = 2
@@ -143,14 +150,21 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "10"
 
-[node name="NumberGeneratorOwnedLabel" type="Label" parent="GeneratorsPanelBackground/GeneratorsContainer/SolarPanelGenerator"]
+[node name="NumberOwnedAndPointsPerSecondContainer" type="VBoxContainer" parent="GeneratorsPanelBackground/GeneratorsContainer/SolarPanelGenerator"]
+layout_mode = 2
+
+[node name="NumberGeneratorOwnedLabel" type="Label" parent="GeneratorsPanelBackground/GeneratorsContainer/SolarPanelGenerator/NumberOwnedAndPointsPerSecondContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "0x"
 
+[node name="PointsPerSecondLabel" type="Label" parent="GeneratorsPanelBackground/GeneratorsContainer/SolarPanelGenerator/NumberOwnedAndPointsPerSecondContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
 [node name="HydroDam" type="HBoxContainer" parent="GeneratorsPanelBackground/GeneratorsContainer"]
 layout_mode = 2
-script = ExtResource("8_c1d8j")
+script = ExtResource("8_qmw3r")
 
 [node name="GeneratorImage" type="TextureRect" parent="GeneratorsPanelBackground/GeneratorsContainer/HydroDam"]
 layout_mode = 2
@@ -177,10 +191,17 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "10"
 
-[node name="NumberGeneratorOwnedLabel" type="Label" parent="GeneratorsPanelBackground/GeneratorsContainer/HydroDam"]
+[node name="NumberOwnedAndPointsPerSecondContainer" type="VBoxContainer" parent="GeneratorsPanelBackground/GeneratorsContainer/HydroDam"]
+layout_mode = 2
+
+[node name="NumberGeneratorOwnedLabel" type="Label" parent="GeneratorsPanelBackground/GeneratorsContainer/HydroDam/NumberOwnedAndPointsPerSecondContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "0x"
+
+[node name="PointsPerSecondLabel" type="Label" parent="GeneratorsPanelBackground/GeneratorsContainer/HydroDam/NumberOwnedAndPointsPerSecondContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 
 [connection signal="button_down" from="ClickerButton" to="." method="_on_clicker_button_button_down"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
