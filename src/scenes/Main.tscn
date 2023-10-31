@@ -1,16 +1,26 @@
-[gd_scene load_steps=4 format=3 uid="uid://c651v7kq6daoc"]
+[gd_scene load_steps=7 format=3 uid="uid://c651v7kq6daoc"]
 
 [ext_resource type="Script" path="res://scenes/Main.gd" id="1_y24vv"]
 [ext_resource type="Texture2D" uid="uid://b0o5vwmdvugfc" path="res://assets/Generator-Dummy-Image.png" id="2_cuce1"]
+[ext_resource type="Texture2D" uid="uid://cdq84fb1nf85d" path="res://assets/Background.png" id="2_w8t11"]
+[ext_resource type="Script" path="res://scenes/WindTurbineGenerator.gd" id="3_3in7a"]
 [ext_resource type="Texture2D" uid="uid://wbmls4xd5htk" path="res://assets/Coin.png" id="3_h1xie"]
+[ext_resource type="Script" path="res://scenes/SolarPanelGenerator.gd" id="6_1ult1"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_y24vv")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("2_w8t11")
 
 [node name="ClickerButton" type="Button" parent="."]
 layout_mode = 1
@@ -27,7 +37,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Button"
 
-[node name="Label" type="Label" parent="."]
+[node name="PointDisplay" type="RichTextLabel" parent="."]
 layout_mode = 0
 offset_left = 553.0
 offset_top = 90.0
@@ -37,122 +47,127 @@ offset_bottom = 113.0
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="GeneratorsPanelBackground" type="ColorRect" parent="."]
 layout_mode = 0
 offset_left = 927.0
 offset_top = 31.0
 offset_right = 1121.0
 offset_bottom = 570.0
+color = Color(0.823529, 0.670588, 0.6, 1)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
+[node name="GeneratorsContainer" type="VBoxContainer" parent="GeneratorsPanelBackground"]
 layout_mode = 0
 offset_right = 194.0
 offset_bottom = 539.0
 
-[node name="GeneratorsLabel" type="Label" parent="ColorRect/VBoxContainer"]
+[node name="GeneratorsLabel" type="Label" parent="GeneratorsPanelBackground/GeneratorsContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Generators"
 horizontal_alignment = 1
 
-[node name="Generator" type="HBoxContainer" parent="ColorRect/VBoxContainer"]
+[node name="WindTurbineGenerator" type="HBoxContainer" parent="GeneratorsPanelBackground/GeneratorsContainer"]
 layout_mode = 2
+script = ExtResource("3_3in7a")
 
-[node name="GeneratorImage" type="TextureRect" parent="ColorRect/VBoxContainer/Generator"]
+[node name="GeneratorImage" type="TextureRect" parent="GeneratorsPanelBackground/GeneratorsContainer/WindTurbineGenerator"]
 layout_mode = 2
 texture = ExtResource("2_cuce1")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer/Generator"]
+[node name="VBoxContainer" type="VBoxContainer" parent="GeneratorsPanelBackground/GeneratorsContainer/WindTurbineGenerator"]
 layout_mode = 2
 
-[node name="GeneratorName" type="Label" parent="ColorRect/VBoxContainer/Generator/VBoxContainer"]
+[node name="GeneratorName" type="Label" parent="GeneratorsPanelBackground/GeneratorsContainer/WindTurbineGenerator/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Wind Turbine"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer/Generator/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="GeneratorsPanelBackground/GeneratorsContainer/WindTurbineGenerator/VBoxContainer"]
 layout_mode = 2
 alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="ColorRect/VBoxContainer/Generator/VBoxContainer/HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="GeneratorsPanelBackground/GeneratorsContainer/WindTurbineGenerator/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("3_h1xie")
 
-[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Generator/VBoxContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="GeneratorsPanelBackground/GeneratorsContainer/WindTurbineGenerator/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "10"
 
-[node name="NumberGeneratorOwned" type="Label" parent="ColorRect/VBoxContainer/Generator"]
+[node name="NumberGeneratorOwned" type="Label" parent="GeneratorsPanelBackground/GeneratorsContainer/WindTurbineGenerator"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "1x"
 
-[node name="Generator2" type="HBoxContainer" parent="ColorRect/VBoxContainer"]
+[node name="SolarPanelGenerator" type="HBoxContainer" parent="GeneratorsPanelBackground/GeneratorsContainer"]
 layout_mode = 2
+script = ExtResource("6_1ult1")
 
-[node name="GeneratorImage" type="TextureRect" parent="ColorRect/VBoxContainer/Generator2"]
+[node name="GeneratorImage" type="TextureRect" parent="GeneratorsPanelBackground/GeneratorsContainer/SolarPanelGenerator"]
 layout_mode = 2
 texture = ExtResource("2_cuce1")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer/Generator2"]
+[node name="VBoxContainer" type="VBoxContainer" parent="GeneratorsPanelBackground/GeneratorsContainer/SolarPanelGenerator"]
 layout_mode = 2
 
-[node name="GeneratorName" type="Label" parent="ColorRect/VBoxContainer/Generator2/VBoxContainer"]
+[node name="GeneratorName" type="Label" parent="GeneratorsPanelBackground/GeneratorsContainer/SolarPanelGenerator/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Wind Turbine"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer/Generator2/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="GeneratorsPanelBackground/GeneratorsContainer/SolarPanelGenerator/VBoxContainer"]
 layout_mode = 2
 alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="ColorRect/VBoxContainer/Generator2/VBoxContainer/HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="GeneratorsPanelBackground/GeneratorsContainer/SolarPanelGenerator/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("3_h1xie")
 
-[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Generator2/VBoxContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="GeneratorsPanelBackground/GeneratorsContainer/SolarPanelGenerator/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "10"
 
-[node name="NumberGeneratorOwned" type="Label" parent="ColorRect/VBoxContainer/Generator2"]
+[node name="NumberGeneratorOwned" type="Label" parent="GeneratorsPanelBackground/GeneratorsContainer/SolarPanelGenerator"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "1x"
 
-[node name="Generator3" type="HBoxContainer" parent="ColorRect/VBoxContainer"]
+[node name="Hydroelectric Dam" type="HBoxContainer" parent="GeneratorsPanelBackground/GeneratorsContainer"]
 layout_mode = 2
 
-[node name="GeneratorImage" type="TextureRect" parent="ColorRect/VBoxContainer/Generator3"]
+[node name="GeneratorImage" type="TextureRect" parent="GeneratorsPanelBackground/GeneratorsContainer/Hydroelectric Dam"]
 layout_mode = 2
 texture = ExtResource("2_cuce1")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer/Generator3"]
+[node name="VBoxContainer" type="VBoxContainer" parent="GeneratorsPanelBackground/GeneratorsContainer/Hydroelectric Dam"]
 layout_mode = 2
 
-[node name="GeneratorName" type="Label" parent="ColorRect/VBoxContainer/Generator3/VBoxContainer"]
+[node name="GeneratorName" type="Label" parent="GeneratorsPanelBackground/GeneratorsContainer/Hydroelectric Dam/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Wind Turbine"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer/Generator3/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="GeneratorsPanelBackground/GeneratorsContainer/Hydroelectric Dam/VBoxContainer"]
 layout_mode = 2
 alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="ColorRect/VBoxContainer/Generator3/VBoxContainer/HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="GeneratorsPanelBackground/GeneratorsContainer/Hydroelectric Dam/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("3_h1xie")
 
-[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Generator3/VBoxContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="GeneratorsPanelBackground/GeneratorsContainer/Hydroelectric Dam/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "10"
 
-[node name="NumberGeneratorOwned" type="Label" parent="ColorRect/VBoxContainer/Generator3"]
+[node name="NumberGeneratorOwned" type="Label" parent="GeneratorsPanelBackground/GeneratorsContainer/Hydroelectric Dam"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "1x"
 
 [connection signal="button_down" from="ClickerButton" to="." method="_on_clicker_button_button_down"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="gui_input" from="GeneratorsPanelBackground/GeneratorsContainer/WindTurbineGenerator" to="GeneratorsPanelBackground/GeneratorsContainer/WindTurbineGenerator" method="_on_gui_input"]
+[connection signal="gui_input" from="GeneratorsPanelBackground/GeneratorsContainer/SolarPanelGenerator" to="GeneratorsPanelBackground/GeneratorsContainer/SolarPanelGenerator" method="_on_gui_input"]
