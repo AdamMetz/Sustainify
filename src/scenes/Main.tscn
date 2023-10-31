@@ -1,13 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://c651v7kq6daoc"]
+[gd_scene load_steps=9 format=3 uid="uid://0s5wv4uyw3g1"]
 
 [ext_resource type="Script" path="res://scenes/Main.gd" id="1_y24vv"]
 [ext_resource type="Texture2D" uid="uid://b0o5vwmdvugfc" path="res://assets/Generator-Dummy-Image.png" id="2_cuce1"]
 [ext_resource type="Texture2D" uid="uid://cdq84fb1nf85d" path="res://assets/Background.png" id="2_w8t11"]
 [ext_resource type="FontFile" uid="uid://cl57fd2n5body" path="res://assets/fonts/pixel font-7.ttf" id="3_0avik"]
-[ext_resource type="Script" path="res://scenes/WindTurbineGenerator.gd" id="3_3in7a"]
 [ext_resource type="Texture2D" uid="uid://wbmls4xd5htk" path="res://assets/Coin.png" id="3_h1xie"]
-[ext_resource type="Script" path="res://scenes/SolarPanelGenerator.gd" id="6_1ult1"]
-[ext_resource type="Script" path="res://scenes/HydroDam.gd" id="7_hk7wv"]
+[ext_resource type="Script" path="res://scenes/Generators/WindTurbineGenerator.gd" id="4_13tw6"]
+[ext_resource type="Script" path="res://scenes/Generators/SolarPanelGenerator.gd" id="7_ynbc8"]
+[ext_resource type="Script" path="res://scenes/Generators/HydroDam.gd" id="8_c1d8j"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -82,7 +82,7 @@ horizontal_alignment = 1
 
 [node name="WindTurbineGenerator" type="HBoxContainer" parent="GeneratorsPanelBackground/GeneratorsContainer"]
 layout_mode = 2
-script = ExtResource("3_3in7a")
+script = ExtResource("4_13tw6")
 
 [node name="GeneratorImage" type="TextureRect" parent="GeneratorsPanelBackground/GeneratorsContainer/WindTurbineGenerator"]
 layout_mode = 2
@@ -116,7 +116,7 @@ text = "0x"
 
 [node name="SolarPanelGenerator" type="HBoxContainer" parent="GeneratorsPanelBackground/GeneratorsContainer"]
 layout_mode = 2
-script = ExtResource("6_1ult1")
+script = ExtResource("7_ynbc8")
 
 [node name="GeneratorImage" type="TextureRect" parent="GeneratorsPanelBackground/GeneratorsContainer/SolarPanelGenerator"]
 layout_mode = 2
@@ -150,7 +150,7 @@ text = "0x"
 
 [node name="HydroDam" type="HBoxContainer" parent="GeneratorsPanelBackground/GeneratorsContainer"]
 layout_mode = 2
-script = ExtResource("7_hk7wv")
+script = ExtResource("8_c1d8j")
 
 [node name="GeneratorImage" type="TextureRect" parent="GeneratorsPanelBackground/GeneratorsContainer/HydroDam"]
 layout_mode = 2
