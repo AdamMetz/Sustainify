@@ -100,7 +100,7 @@ text = "Wind Turbine"
 layout_mode = 2
 alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="GeneratorsPanelBackground/GeneratorsContainer/WindTurbineGenerator/NameAndCostContainer/CostContainer"]
+[node name="CoinImage" type="TextureRect" parent="GeneratorsPanelBackground/GeneratorsContainer/WindTurbineGenerator/NameAndCostContainer/CostContainer"]
 layout_mode = 2
 texture = ExtResource("3_h1xie")
 
@@ -141,7 +141,7 @@ text = "Wind Turbine"
 layout_mode = 2
 alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="GeneratorsPanelBackground/GeneratorsContainer/SolarPanelGenerator/NameAndCostContainer/CostContainer"]
+[node name="CoinImage" type="TextureRect" parent="GeneratorsPanelBackground/GeneratorsContainer/SolarPanelGenerator/NameAndCostContainer/CostContainer"]
 layout_mode = 2
 texture = ExtResource("3_h1xie")
 
@@ -162,49 +162,92 @@ text = "0x"
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 
-[node name="HydroDam" type="HBoxContainer" parent="GeneratorsPanelBackground/GeneratorsContainer"]
+[node name="HydroDamGenerator" type="HBoxContainer" parent="GeneratorsPanelBackground/GeneratorsContainer"]
 layout_mode = 2
 script = ExtResource("8_qmw3r")
 
-[node name="GeneratorImage" type="TextureRect" parent="GeneratorsPanelBackground/GeneratorsContainer/HydroDam"]
+[node name="GeneratorImage" type="TextureRect" parent="GeneratorsPanelBackground/GeneratorsContainer/HydroDamGenerator"]
 layout_mode = 2
 texture = ExtResource("2_cuce1")
 
-[node name="NameAndCostContainer" type="VBoxContainer" parent="GeneratorsPanelBackground/GeneratorsContainer/HydroDam"]
+[node name="NameAndCostContainer" type="VBoxContainer" parent="GeneratorsPanelBackground/GeneratorsContainer/HydroDamGenerator"]
 layout_mode = 2
 
-[node name="GeneratorName" type="Label" parent="GeneratorsPanelBackground/GeneratorsContainer/HydroDam/NameAndCostContainer"]
+[node name="GeneratorName" type="Label" parent="GeneratorsPanelBackground/GeneratorsContainer/HydroDamGenerator/NameAndCostContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Wind Turbine"
 
-[node name="CostContainer" type="HBoxContainer" parent="GeneratorsPanelBackground/GeneratorsContainer/HydroDam/NameAndCostContainer"]
+[node name="CostContainer" type="HBoxContainer" parent="GeneratorsPanelBackground/GeneratorsContainer/HydroDamGenerator/NameAndCostContainer"]
 layout_mode = 2
 alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="GeneratorsPanelBackground/GeneratorsContainer/HydroDam/NameAndCostContainer/CostContainer"]
+[node name="CoinImage" type="TextureRect" parent="GeneratorsPanelBackground/GeneratorsContainer/HydroDamGenerator/NameAndCostContainer/CostContainer"]
 layout_mode = 2
 texture = ExtResource("3_h1xie")
 
-[node name="CostLabel" type="Label" parent="GeneratorsPanelBackground/GeneratorsContainer/HydroDam/NameAndCostContainer/CostContainer"]
+[node name="CostLabel" type="Label" parent="GeneratorsPanelBackground/GeneratorsContainer/HydroDamGenerator/NameAndCostContainer/CostContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "10"
 
-[node name="NumberOwnedAndPointsPerSecondContainer" type="VBoxContainer" parent="GeneratorsPanelBackground/GeneratorsContainer/HydroDam"]
+[node name="NumberOwnedAndPointsPerSecondContainer" type="VBoxContainer" parent="GeneratorsPanelBackground/GeneratorsContainer/HydroDamGenerator"]
 layout_mode = 2
 
-[node name="NumberGeneratorOwnedLabel" type="Label" parent="GeneratorsPanelBackground/GeneratorsContainer/HydroDam/NumberOwnedAndPointsPerSecondContainer"]
+[node name="NumberGeneratorOwnedLabel" type="Label" parent="GeneratorsPanelBackground/GeneratorsContainer/HydroDamGenerator/NumberOwnedAndPointsPerSecondContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "0x"
 
-[node name="PointsPerSecondLabel" type="Label" parent="GeneratorsPanelBackground/GeneratorsContainer/HydroDam/NumberOwnedAndPointsPerSecondContainer"]
+[node name="PointsPerSecondLabel" type="Label" parent="GeneratorsPanelBackground/GeneratorsContainer/HydroDamGenerator/NumberOwnedAndPointsPerSecondContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="UpgradesPanelBackground" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 224.0
+offset_bottom = 568.0
+color = Color(0.823529, 0.670588, 0.6, 1)
+
+[node name="UpgradesContainer" type="VBoxContainer" parent="UpgradesPanelBackground"]
+layout_mode = 0
+offset_right = 192.0
+offset_bottom = 536.0
+
+[node name="UpgradesLabel" type="Label" parent="UpgradesPanelBackground/UpgradesContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Upgrades"
+horizontal_alignment = 1
+
+[node name="ClickerUpgradeContainer" type="HBoxContainer" parent="UpgradesPanelBackground/UpgradesContainer"]
+layout_mode = 2
+
+[node name="UpgradeIcon" type="TextureRect" parent="UpgradesPanelBackground/UpgradesContainer/ClickerUpgradeContainer"]
+layout_mode = 2
+texture = ExtResource("2_cuce1")
+
+[node name="NameAndCostContainer" type="VBoxContainer" parent="UpgradesPanelBackground/UpgradesContainer/ClickerUpgradeContainer"]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="UpgradesPanelBackground/UpgradesContainer/ClickerUpgradeContainer/NameAndCostContainer"]
+layout_mode = 2
+text = "Better Clicks"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UpgradesPanelBackground/UpgradesContainer/ClickerUpgradeContainer/NameAndCostContainer"]
+layout_mode = 2
+
+[node name="CostLabel" type="Label" parent="UpgradesPanelBackground/UpgradesContainer/ClickerUpgradeContainer/NameAndCostContainer/HBoxContainer"]
+layout_mode = 2
+text = "100"
+
+[node name="NumberOwnedLabel" type="Label" parent="UpgradesPanelBackground/UpgradesContainer/ClickerUpgradeContainer"]
+layout_mode = 2
 
 [connection signal="button_down" from="ClickerButton" to="." method="_on_clicker_button_button_down"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="gui_input" from="GeneratorsPanelBackground/GeneratorsContainer/WindTurbineGenerator" to="GeneratorsPanelBackground/GeneratorsContainer/WindTurbineGenerator" method="_on_gui_input"]
 [connection signal="gui_input" from="GeneratorsPanelBackground/GeneratorsContainer/SolarPanelGenerator" to="GeneratorsPanelBackground/GeneratorsContainer/SolarPanelGenerator" method="_on_gui_input"]
-[connection signal="gui_input" from="GeneratorsPanelBackground/GeneratorsContainer/HydroDam" to="GeneratorsPanelBackground/GeneratorsContainer/HydroDam" method="_on_gui_input"]
+[connection signal="gui_input" from="GeneratorsPanelBackground/GeneratorsContainer/HydroDamGenerator" to="GeneratorsPanelBackground/GeneratorsContainer/HydroDamGenerator" method="_on_gui_input"]
