@@ -27,7 +27,6 @@ func init(gen_name : String, gen_cost : int, gen_points_per_second : int):
 
 func get_generator_name() -> String: return self.generator_name
 
-func set_cost(new_cost : int): self.cost = new_cost
 func get_cost() -> int: return self.cost
 
 func get_points_per_second() -> int: return self.points_per_second
@@ -36,7 +35,7 @@ func get_number_owned() -> int: return self.number_owned
 
 func get_cost_increase_growth_factor() -> float: return self.cost_increase_growth_factor
 
-# Cost & Number Owned Updaters #
+# Updaters #
 
 func update_cost():
 	self.cost = ceil(cost * cost_increase_growth_factor)
@@ -45,6 +44,12 @@ func update_cost():
 func update_number_owned():
 	self.number_owned += 1
 	set_number_owned_label()
+
+# Upgrade Functionality #
+
+func upgrade(points_multiplier : int):
+	self.points_per_second *= points_multiplier
+	set_points_per_second_label()
 
 # Label Setters #
 

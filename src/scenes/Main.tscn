@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cui2g3w0tf1qp"]
+[gd_scene load_steps=13 format=3 uid="uid://cui2g3w0tf1qp"]
 
 [ext_resource type="Script" path="res://scenes/Main.gd" id="1_y24vv"]
 [ext_resource type="Texture2D" uid="uid://b0o5vwmdvugfc" path="res://assets/Generator-Dummy-Image.png" id="2_cuce1"]
@@ -8,6 +8,10 @@
 [ext_resource type="Script" path="res://scenes/Generators/WindTurbineGenerator.gd" id="4_13tw6"]
 [ext_resource type="Script" path="res://scenes/Generators/SolarPanelGenerator.gd" id="7_ynbc8"]
 [ext_resource type="Script" path="res://scenes/Generators/HydroDamGenerator.gd" id="8_qmw3r"]
+[ext_resource type="Script" path="res://scenes/Upgrades/BetterClicksUpgrade.gd" id="9_mpnsb"]
+[ext_resource type="Script" path="res://scenes/Upgrades/WindTurbineUpgrade.gd" id="10_yiprw"]
+[ext_resource type="Script" path="res://scenes/Upgrades/SolarPanelUpgrade.gd" id="11_l53tf"]
+[ext_resource type="Script" path="res://scenes/Upgrades/HydroDamUpgrade.gd" id="12_w8fqh"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -224,6 +228,7 @@ horizontal_alignment = 1
 
 [node name="ClickerUpgradeContainer" type="HBoxContainer" parent="UpgradesPanelBackground/UpgradesContainer"]
 layout_mode = 2
+script = ExtResource("9_mpnsb")
 
 [node name="UpgradeIcon" type="TextureRect" parent="UpgradesPanelBackground/UpgradesContainer/ClickerUpgradeContainer"]
 layout_mode = 2
@@ -234,20 +239,115 @@ layout_mode = 2
 
 [node name="NameLabel" type="Label" parent="UpgradesPanelBackground/UpgradesContainer/ClickerUpgradeContainer/NameAndCostContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Better Clicks"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="UpgradesPanelBackground/UpgradesContainer/ClickerUpgradeContainer/NameAndCostContainer"]
+[node name="CostContainer" type="HBoxContainer" parent="UpgradesPanelBackground/UpgradesContainer/ClickerUpgradeContainer/NameAndCostContainer"]
 layout_mode = 2
 
-[node name="CostLabel" type="Label" parent="UpgradesPanelBackground/UpgradesContainer/ClickerUpgradeContainer/NameAndCostContainer/HBoxContainer"]
+[node name="CostLabel" type="Label" parent="UpgradesPanelBackground/UpgradesContainer/ClickerUpgradeContainer/NameAndCostContainer/CostContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "100"
 
 [node name="NumberOwnedLabel" type="Label" parent="UpgradesPanelBackground/UpgradesContainer/ClickerUpgradeContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "1/5"
+
+[node name="WindTurbineUpgradeContainer" type="HBoxContainer" parent="UpgradesPanelBackground/UpgradesContainer"]
+layout_mode = 2
+script = ExtResource("10_yiprw")
+
+[node name="UpgradeIcon" type="TextureRect" parent="UpgradesPanelBackground/UpgradesContainer/WindTurbineUpgradeContainer"]
+layout_mode = 2
+texture = ExtResource("2_cuce1")
+
+[node name="NameAndCostContainer" type="VBoxContainer" parent="UpgradesPanelBackground/UpgradesContainer/WindTurbineUpgradeContainer"]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="UpgradesPanelBackground/UpgradesContainer/WindTurbineUpgradeContainer/NameAndCostContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Better Clicks"
+
+[node name="CostContainer" type="HBoxContainer" parent="UpgradesPanelBackground/UpgradesContainer/WindTurbineUpgradeContainer/NameAndCostContainer"]
+layout_mode = 2
+
+[node name="CostLabel" type="Label" parent="UpgradesPanelBackground/UpgradesContainer/WindTurbineUpgradeContainer/NameAndCostContainer/CostContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "100"
+
+[node name="NumberOwnedLabel" type="Label" parent="UpgradesPanelBackground/UpgradesContainer/WindTurbineUpgradeContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "1/5"
+
+[node name="SolarPanelUpgradeContainer" type="HBoxContainer" parent="UpgradesPanelBackground/UpgradesContainer"]
+layout_mode = 2
+script = ExtResource("11_l53tf")
+
+[node name="UpgradeIcon" type="TextureRect" parent="UpgradesPanelBackground/UpgradesContainer/SolarPanelUpgradeContainer"]
+layout_mode = 2
+texture = ExtResource("2_cuce1")
+
+[node name="NameAndCostContainer" type="VBoxContainer" parent="UpgradesPanelBackground/UpgradesContainer/SolarPanelUpgradeContainer"]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="UpgradesPanelBackground/UpgradesContainer/SolarPanelUpgradeContainer/NameAndCostContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Better Clicks"
+
+[node name="CostContainer" type="HBoxContainer" parent="UpgradesPanelBackground/UpgradesContainer/SolarPanelUpgradeContainer/NameAndCostContainer"]
+layout_mode = 2
+
+[node name="CostLabel" type="Label" parent="UpgradesPanelBackground/UpgradesContainer/SolarPanelUpgradeContainer/NameAndCostContainer/CostContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "100"
+
+[node name="NumberOwnedLabel" type="Label" parent="UpgradesPanelBackground/UpgradesContainer/SolarPanelUpgradeContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "1/5"
+
+[node name="HydroDamUpgradeContainer" type="HBoxContainer" parent="UpgradesPanelBackground/UpgradesContainer"]
+layout_mode = 2
+script = ExtResource("12_w8fqh")
+
+[node name="UpgradeIcon" type="TextureRect" parent="UpgradesPanelBackground/UpgradesContainer/HydroDamUpgradeContainer"]
+layout_mode = 2
+texture = ExtResource("2_cuce1")
+
+[node name="NameAndCostContainer" type="VBoxContainer" parent="UpgradesPanelBackground/UpgradesContainer/HydroDamUpgradeContainer"]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="UpgradesPanelBackground/UpgradesContainer/HydroDamUpgradeContainer/NameAndCostContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Better Clicks"
+
+[node name="CostContainer" type="HBoxContainer" parent="UpgradesPanelBackground/UpgradesContainer/HydroDamUpgradeContainer/NameAndCostContainer"]
+layout_mode = 2
+
+[node name="CostLabel" type="Label" parent="UpgradesPanelBackground/UpgradesContainer/HydroDamUpgradeContainer/NameAndCostContainer/CostContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "100"
+
+[node name="NumberOwnedLabel" type="Label" parent="UpgradesPanelBackground/UpgradesContainer/HydroDamUpgradeContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "1/5"
 
 [connection signal="button_down" from="ClickerButton" to="." method="_on_clicker_button_button_down"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="gui_input" from="GeneratorsPanelBackground/GeneratorsContainer/WindTurbineGenerator" to="GeneratorsPanelBackground/GeneratorsContainer/WindTurbineGenerator" method="_on_gui_input"]
 [connection signal="gui_input" from="GeneratorsPanelBackground/GeneratorsContainer/SolarPanelGenerator" to="GeneratorsPanelBackground/GeneratorsContainer/SolarPanelGenerator" method="_on_gui_input"]
 [connection signal="gui_input" from="GeneratorsPanelBackground/GeneratorsContainer/HydroDamGenerator" to="GeneratorsPanelBackground/GeneratorsContainer/HydroDamGenerator" method="_on_gui_input"]
+[connection signal="gui_input" from="UpgradesPanelBackground/UpgradesContainer/ClickerUpgradeContainer" to="UpgradesPanelBackground/UpgradesContainer/ClickerUpgradeContainer" method="_on_gui_input"]
+[connection signal="gui_input" from="UpgradesPanelBackground/UpgradesContainer/WindTurbineUpgradeContainer" to="UpgradesPanelBackground/UpgradesContainer/WindTurbineUpgradeContainer" method="_on_gui_input"]
+[connection signal="gui_input" from="UpgradesPanelBackground/UpgradesContainer/SolarPanelUpgradeContainer" to="UpgradesPanelBackground/UpgradesContainer/SolarPanelUpgradeContainer" method="_on_gui_input"]
+[connection signal="gui_input" from="UpgradesPanelBackground/UpgradesContainer/HydroDamUpgradeContainer" to="UpgradesPanelBackground/UpgradesContainer/HydroDamUpgradeContainer" method="_on_gui_input"]

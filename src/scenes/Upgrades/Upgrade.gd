@@ -11,13 +11,17 @@ var cost : int
 var number_owned : int = 0
 var purchase_limit : int
 var cost_increase_growth_factor : int = 10
+var upgrade_multiplier : int = 2
+var associated_generator_name : String
+var associated_generator : BaseGenerator
 
 # Constructor #
 
-func init(upgrade_name : String, upgrade_cost : int, upgrade_purchase_limit : int):
+func init(upgrade_name : String, associated_generator_name: String,upgrade_cost : int, upgrade_purchase_limit : int):
 	self.upgrade_name = upgrade_name
 	self.cost = upgrade_cost
 	self.purchase_limit = upgrade_purchase_limit
+	self.associated_generator_name = associated_generator_name
 	# Setup label nodes
 	self.set_upgrade_name_label()
 	self.set_cost_label()
@@ -27,12 +31,18 @@ func init(upgrade_name : String, upgrade_cost : int, upgrade_purchase_limit : in
 
 func get_upgrade_name() -> String: return self.upgrade_name
 
-func set_cost(new_cost : int): self.cost = new_cost
 func get_cost() -> int: return self.cost
 
 func get_purchase_limit() -> int: return self.purchase_limit
 
 func get_number_owned() -> int: return self.number_owned
+
+func get_upgrade_multiplier() -> int: return self.upgrade_multiplier
+
+func get_associated_generator_name() -> String: return self.associated_generator_name
+
+func get_associated_generator() -> BaseGenerator: return self.associated_generator
+func set_associated_generator(generator : BaseGenerator): self.associated_generator = generator
 
 # Cost & Number Owned Updaters #
 
@@ -64,10 +74,12 @@ func _on_gui_input(event):
 	if (event is InputEventMouseButton):
 		if (event.button_index == MOUSE_BUTTON_LEFT and event.pressed):
 			var main_node = get_node("../../../../Main")
-			if (main_node.sustainability_points >= self.cost):
-				print(self.upgrade_name) # Debugging
+			if (self.number_owned < self.purchase_limit and main_node.sustainability_points >= self.cost):
+				if self.upgrade_name != "Better Clicks":
+					self.associated_generator.upgrade(upgrade_multiplier)
 				emit_signal("upgrade_purchased", self)
 				update_cost()
 				update_number_owned()
+
 			else:
 				print("Cannot afford") # Debugging

@@ -1,7 +1,7 @@
 extends './Upgrade.gd'
 
-class_name BetterClicksUpgrade
+class_name WindTurbineUpgrade
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	self.init("Better Clicks", "None", 1, 5)
+	self.init("Efficient Wind Turbines", "Wind Turbine", 10, 5)
