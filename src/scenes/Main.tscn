@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://cui2g3w0tf1qp"]
+[gd_scene load_steps=14 format=3 uid="uid://cui2g3w0tf1qp"]
 
 [ext_resource type="Script" path="res://scenes/Main.gd" id="1_y24vv"]
 [ext_resource type="Texture2D" uid="uid://b0o5vwmdvugfc" path="res://assets/Generator-Dummy-Image.png" id="2_cuce1"]
 [ext_resource type="Texture2D" uid="uid://cdq84fb1nf85d" path="res://assets/Background.png" id="2_w8t11"]
 [ext_resource type="FontFile" uid="uid://cl57fd2n5body" path="res://assets/fonts/pixel font-7.ttf" id="3_0avik"]
 [ext_resource type="Texture2D" uid="uid://wbmls4xd5htk" path="res://assets/Coin.png" id="3_h1xie"]
+[ext_resource type="Texture2D" uid="uid://nqptkfdm5ehx" path="res://assets/Tree-1.png" id="3_vsn51"]
 [ext_resource type="Script" path="res://scenes/Generators/WindTurbineGenerator.gd" id="4_13tw6"]
 [ext_resource type="Script" path="res://scenes/Generators/SolarPanelGenerator.gd" id="7_ynbc8"]
 [ext_resource type="Script" path="res://scenes/Generators/HydroDamGenerator.gd" id="8_qmw3r"]
@@ -28,13 +29,473 @@ offset_right = 1152.0
 offset_bottom = 648.0
 texture = ExtResource("2_w8t11")
 
+[node name="Trees" type="Control" parent="Background"]
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="Tree" type="TextureRect" parent="Background/Trees"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 368.0
+offset_right = 88.0
+offset_bottom = 421.0
+texture = ExtResource("3_vsn51")
+
+[node name="Tree2" type="TextureRect" parent="Background/Trees"]
+offset_left = 120.0
+offset_top = 392.0
+offset_right = 160.0
+offset_bottom = 445.0
+texture = ExtResource("3_vsn51")
+
+[node name="Tree3" type="TextureRect" parent="Background/Trees"]
+offset_left = 192.0
+offset_top = 376.0
+offset_right = 232.0
+offset_bottom = 429.0
+texture = ExtResource("3_vsn51")
+
+[node name="Tree4" type="TextureRect" parent="Background/Trees"]
+offset_left = 72.0
+offset_top = 424.0
+offset_right = 112.0
+offset_bottom = 477.0
+texture = ExtResource("3_vsn51")
+
+[node name="Tree5" type="TextureRect" parent="Background/Trees"]
+offset_left = 152.0
+offset_top = 360.0
+offset_right = 192.0
+offset_bottom = 413.0
+texture = ExtResource("3_vsn51")
+
+[node name="Tree6" type="TextureRect" parent="Background/Trees"]
+offset_left = -16.0
+offset_top = 408.0
+offset_right = 24.0
+offset_bottom = 461.0
+texture = ExtResource("3_vsn51")
+
+[node name="Tree7" type="TextureRect" parent="Background/Trees"]
+offset_left = 24.0
+offset_top = 448.0
+offset_right = 64.0
+offset_bottom = 501.0
+texture = ExtResource("3_vsn51")
+
+[node name="Tree8" type="TextureRect" parent="Background/Trees"]
+offset_top = 352.0
+offset_right = 40.0
+offset_bottom = 405.0
+texture = ExtResource("3_vsn51")
+
+[node name="Tree9" type="TextureRect" parent="Background/Trees"]
+offset_left = 96.0
+offset_top = 352.0
+offset_right = 136.0
+offset_bottom = 405.0
+texture = ExtResource("3_vsn51")
+
+[node name="Tree10" type="TextureRect" parent="Background/Trees"]
+offset_left = 168.0
+offset_top = 416.0
+offset_right = 208.0
+offset_bottom = 469.0
+texture = ExtResource("3_vsn51")
+
+[node name="Tree11" type="TextureRect" parent="Background/Trees"]
+offset_left = 136.0
+offset_top = 432.0
+offset_right = 176.0
+offset_bottom = 485.0
+texture = ExtResource("3_vsn51")
+
+[node name="Tree12" type="TextureRect" parent="Background/Trees"]
+offset_left = 88.0
+offset_top = 472.0
+offset_right = 128.0
+offset_bottom = 525.0
+texture = ExtResource("3_vsn51")
+
+[node name="Tree13" type="TextureRect" parent="Background/Trees"]
+offset_left = 160.0
+offset_top = 464.0
+offset_right = 200.0
+offset_bottom = 517.0
+texture = ExtResource("3_vsn51")
+
+[node name="Tree14" type="TextureRect" parent="Background/Trees"]
+offset_left = 232.0
+offset_top = 360.0
+offset_right = 272.0
+offset_bottom = 413.0
+texture = ExtResource("3_vsn51")
+
+[node name="Tree15" type="TextureRect" parent="Background/Trees"]
+offset_left = 232.0
+offset_top = 416.0
+offset_right = 272.0
+offset_bottom = 469.0
+texture = ExtResource("3_vsn51")
+
+[node name="Tree16" type="TextureRect" parent="Background/Trees"]
+offset_left = 224.0
+offset_top = 464.0
+offset_right = 264.0
+offset_bottom = 517.0
+texture = ExtResource("3_vsn51")
+
+[node name="Tree17" type="TextureRect" parent="Background/Trees"]
+offset_left = 288.0
+offset_top = 352.0
+offset_right = 328.0
+offset_bottom = 405.0
+texture = ExtResource("3_vsn51")
+
+[node name="Tree18" type="TextureRect" parent="Background/Trees"]
+offset_left = 624.0
+offset_top = 408.0
+offset_right = 664.0
+offset_bottom = 461.0
+texture = ExtResource("3_vsn51")
+
+[node name="Tree19" type="TextureRect" parent="Background/Trees"]
+offset_left = 408.0
+offset_top = 400.0
+offset_right = 448.0
+offset_bottom = 453.0
+texture = ExtResource("3_vsn51")
+
+[node name="Tree20" type="TextureRect" parent="Background/Trees"]
+offset_left = 304.0
+offset_top = 424.0
+offset_right = 344.0
+offset_bottom = 477.0
+texture = ExtResource("3_vsn51")
+
+[node name="Tree21" type="TextureRect" parent="Background/Trees"]
+offset_left = 280.0
+offset_top = 384.0
+offset_right = 320.0
+offset_bottom = 437.0
+texture = ExtResource("3_vsn51")
+
+[node name="Tree22" type="TextureRect" parent="Background/Trees"]
+offset_left = 352.0
+offset_top = 376.0
+offset_right = 392.0
+offset_bottom = 429.0
+texture = ExtResource("3_vsn51")
+
+[node name="Tree23" type="TextureRect" parent="Background/Trees"]
+offset_left = 288.0
+offset_top = 472.0
+offset_right = 328.0
+offset_bottom = 525.0
+texture = ExtResource("3_vsn51")
+
+[node name="Tree24" type="TextureRect" parent="Background/Trees"]
+offset_left = 360.0
+offset_top = 448.0
+offset_right = 400.0
+offset_bottom = 501.0
+texture = ExtResource("3_vsn51")
+
+[node name="Tree25" type="TextureRect" parent="Background/Trees"]
+offset_left = 448.0
+offset_top = 368.0
+offset_right = 488.0
+offset_bottom = 421.0
+texture = ExtResource("3_vsn51")
+
+[node name="Tree26" type="TextureRect" parent="Background/Trees"]
+offset_left = 424.0
+offset_top = 440.0
+offset_right = 464.0
+offset_bottom = 493.0
+texture = ExtResource("3_vsn51")
+
+[node name="Tree27" type="TextureRect" parent="Background/Trees"]
+offset_left = 392.0
+offset_top = 360.0
+offset_right = 432.0
+offset_bottom = 413.0
+texture = ExtResource("3_vsn51")
+
+[node name="Tree28" type="TextureRect" parent="Background/Trees"]
+offset_left = 1096.0
+offset_top = 368.0
+offset_right = 1136.0
+offset_bottom = 421.0
+texture = ExtResource("3_vsn51")
+
+[node name="Tree29" type="TextureRect" parent="Background/Trees"]
+offset_left = 528.0
+offset_top = 360.0
+offset_right = 568.0
+offset_bottom = 413.0
+texture = ExtResource("3_vsn51")
+
+[node name="Tree30" type="TextureRect" parent="Background/Trees"]
+offset_left = 480.0
+offset_top = 400.0
+offset_right = 520.0
+offset_bottom = 453.0
+texture = ExtResource("3_vsn51")
+
+[node name="Tree31" type="TextureRect" parent="Background/Trees"]
+offset_left = 344.0
+offset_top = 408.0
+offset_right = 384.0
+offset_bottom = 461.0
+texture = ExtResource("3_vsn51")
+
+[node name="Tree32" type="TextureRect" parent="Background/Trees"]
+offset_left = 464.0
+offset_top = 464.0
+offset_right = 504.0
+offset_bottom = 517.0
+texture = ExtResource("3_vsn51")
+
+[node name="Tree33" type="TextureRect" parent="Background/Trees"]
+offset_left = 392.0
+offset_top = 472.0
+offset_right = 432.0
+offset_bottom = 525.0
+texture = ExtResource("3_vsn51")
+
+[node name="Tree34" type="TextureRect" parent="Background/Trees"]
+offset_left = 504.0
+offset_top = 432.0
+offset_right = 544.0
+offset_bottom = 485.0
+texture = ExtResource("3_vsn51")
+
+[node name="Tree35" type="TextureRect" parent="Background/Trees"]
+offset_left = 552.0
+offset_top = 400.0
+offset_right = 592.0
+offset_bottom = 453.0
+texture = ExtResource("3_vsn51")
+
+[node name="Tree36" type="TextureRect" parent="Background/Trees"]
+offset_left = 560.0
+offset_top = 464.0
+offset_right = 600.0
+offset_bottom = 517.0
+texture = ExtResource("3_vsn51")
+
+[node name="Tree37" type="TextureRect" parent="Background/Trees"]
+offset_left = 608.0
+offset_top = 360.0
+offset_right = 648.0
+offset_bottom = 413.0
+texture = ExtResource("3_vsn51")
+
+[node name="Tree38" type="TextureRect" parent="Background/Trees"]
+offset_left = 592.0
+offset_top = 432.0
+offset_right = 632.0
+offset_bottom = 485.0
+texture = ExtResource("3_vsn51")
+
+[node name="Tree39" type="TextureRect" parent="Background/Trees"]
+offset_left = 640.0
+offset_top = 464.0
+offset_right = 680.0
+offset_bottom = 517.0
+texture = ExtResource("3_vsn51")
+
+[node name="Tree40" type="TextureRect" parent="Background/Trees"]
+offset_left = 664.0
+offset_top = 376.0
+offset_right = 704.0
+offset_bottom = 429.0
+texture = ExtResource("3_vsn51")
+
+[node name="Tree41" type="TextureRect" parent="Background/Trees"]
+offset_left = 688.0
+offset_top = 424.0
+offset_right = 728.0
+offset_bottom = 477.0
+texture = ExtResource("3_vsn51")
+
+[node name="Tree42" type="TextureRect" parent="Background/Trees"]
+offset_left = 696.0
+offset_top = 480.0
+offset_right = 736.0
+offset_bottom = 533.0
+texture = ExtResource("3_vsn51")
+
+[node name="Tree43" type="TextureRect" parent="Background/Trees"]
+offset_left = 720.0
+offset_top = 368.0
+offset_right = 760.0
+offset_bottom = 421.0
+texture = ExtResource("3_vsn51")
+
+[node name="Tree44" type="TextureRect" parent="Background/Trees"]
+offset_left = 744.0
+offset_top = 408.0
+offset_right = 784.0
+offset_bottom = 461.0
+texture = ExtResource("3_vsn51")
+
+[node name="Tree45" type="TextureRect" parent="Background/Trees"]
+offset_left = 720.0
+offset_top = 448.0
+offset_right = 760.0
+offset_bottom = 501.0
+texture = ExtResource("3_vsn51")
+
+[node name="Tree46" type="TextureRect" parent="Background/Trees"]
+offset_left = 776.0
+offset_top = 376.0
+offset_right = 816.0
+offset_bottom = 429.0
+texture = ExtResource("3_vsn51")
+
+[node name="Tree47" type="TextureRect" parent="Background/Trees"]
+offset_left = 760.0
+offset_top = 464.0
+offset_right = 800.0
+offset_bottom = 517.0
+texture = ExtResource("3_vsn51")
+
+[node name="Tree48" type="TextureRect" parent="Background/Trees"]
+offset_left = 832.0
+offset_top = 360.0
+offset_right = 872.0
+offset_bottom = 413.0
+texture = ExtResource("3_vsn51")
+
+[node name="Tree49" type="TextureRect" parent="Background/Trees"]
+offset_left = 808.0
+offset_top = 416.0
+offset_right = 848.0
+offset_bottom = 469.0
+texture = ExtResource("3_vsn51")
+
+[node name="Tree50" type="TextureRect" parent="Background/Trees"]
+offset_left = 816.0
+offset_top = 464.0
+offset_right = 856.0
+offset_bottom = 517.0
+texture = ExtResource("3_vsn51")
+
+[node name="Tree51" type="TextureRect" parent="Background/Trees"]
+offset_left = 864.0
+offset_top = 400.0
+offset_right = 904.0
+offset_bottom = 453.0
+texture = ExtResource("3_vsn51")
+
+[node name="Tree52" type="TextureRect" parent="Background/Trees"]
+offset_left = 912.0
+offset_top = 376.0
+offset_right = 952.0
+offset_bottom = 429.0
+texture = ExtResource("3_vsn51")
+
+[node name="Tree53" type="TextureRect" parent="Background/Trees"]
+offset_left = 872.0
+offset_top = 456.0
+offset_right = 912.0
+offset_bottom = 509.0
+texture = ExtResource("3_vsn51")
+
+[node name="Tree54" type="TextureRect" parent="Background/Trees"]
+offset_left = 976.0
+offset_top = 360.0
+offset_right = 1016.0
+offset_bottom = 413.0
+texture = ExtResource("3_vsn51")
+
+[node name="Tree55" type="TextureRect" parent="Background/Trees"]
+offset_left = 920.0
+offset_top = 424.0
+offset_right = 960.0
+offset_bottom = 477.0
+texture = ExtResource("3_vsn51")
+
+[node name="Tree56" type="TextureRect" parent="Background/Trees"]
+offset_left = 944.0
+offset_top = 472.0
+offset_right = 984.0
+offset_bottom = 525.0
+texture = ExtResource("3_vsn51")
+
+[node name="Tree57" type="TextureRect" parent="Background/Trees"]
+offset_left = 960.0
+offset_top = 400.0
+offset_right = 1000.0
+offset_bottom = 453.0
+texture = ExtResource("3_vsn51")
+
+[node name="Tree58" type="TextureRect" parent="Background/Trees"]
+offset_left = 992.0
+offset_top = 440.0
+offset_right = 1032.0
+offset_bottom = 493.0
+texture = ExtResource("3_vsn51")
+
+[node name="Tree59" type="TextureRect" parent="Background/Trees"]
+offset_left = 1032.0
+offset_top = 472.0
+offset_right = 1072.0
+offset_bottom = 525.0
+texture = ExtResource("3_vsn51")
+
+[node name="Tree60" type="TextureRect" parent="Background/Trees"]
+offset_left = 1024.0
+offset_top = 392.0
+offset_right = 1064.0
+offset_bottom = 445.0
+texture = ExtResource("3_vsn51")
+
+[node name="Tree61" type="TextureRect" parent="Background/Trees"]
+offset_left = 1048.0
+offset_top = 360.0
+offset_right = 1088.0
+offset_bottom = 413.0
+texture = ExtResource("3_vsn51")
+
+[node name="Tree62" type="TextureRect" parent="Background/Trees"]
+offset_left = 1040.0
+offset_top = 416.0
+offset_right = 1080.0
+offset_bottom = 469.0
+texture = ExtResource("3_vsn51")
+
+[node name="Tree63" type="TextureRect" parent="Background/Trees"]
+offset_left = 1080.0
+offset_top = 424.0
+offset_right = 1120.0
+offset_bottom = 477.0
+texture = ExtResource("3_vsn51")
+
+[node name="Tree64" type="TextureRect" parent="Background/Trees"]
+offset_left = 1096.0
+offset_top = 480.0
+offset_right = 1136.0
+offset_bottom = 533.0
+texture = ExtResource("3_vsn51")
+
+[node name="Tree65" type="TextureRect" parent="Background/Trees"]
+offset_left = 1136.0
+offset_top = 416.0
+offset_right = 1176.0
+offset_bottom = 469.0
+texture = ExtResource("3_vsn51")
+
 [node name="ClickerButton" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
-offset_left = 506.0
-offset_top = 567.0
-offset_right = 633.0
-offset_bottom = 598.0
+offset_left = 520.0
+offset_top = 544.0
+offset_right = 632.0
+offset_bottom = 640.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Button"
@@ -47,7 +508,7 @@ offset_right = 704.0
 offset_bottom = 160.0
 theme_override_fonts/font = ExtResource("3_0avik")
 theme_override_font_sizes/font_size = 35
-text = "1/s"
+text = "1/second"
 horizontal_alignment = 1
 
 [node name="PointsLabel" type="Label" parent="."]
@@ -70,13 +531,13 @@ layout_mode = 0
 offset_left = 927.0
 offset_top = 31.0
 offset_right = 1121.0
-offset_bottom = 570.0
+offset_bottom = 320.0
 color = Color(0.823529, 0.670588, 0.6, 1)
 
 [node name="GeneratorsContainer" type="VBoxContainer" parent="GeneratorsPanelBackground"]
 layout_mode = 0
 offset_right = 194.0
-offset_bottom = 539.0
+offset_bottom = 289.0
 
 [node name="GeneratorsLabel" type="Label" parent="GeneratorsPanelBackground/GeneratorsContainer"]
 layout_mode = 2
@@ -212,13 +673,13 @@ layout_mode = 0
 offset_left = 32.0
 offset_top = 32.0
 offset_right = 224.0
-offset_bottom = 568.0
+offset_bottom = 320.0
 color = Color(0.823529, 0.670588, 0.6, 1)
 
 [node name="UpgradesContainer" type="VBoxContainer" parent="UpgradesPanelBackground"]
 layout_mode = 0
 offset_right = 192.0
-offset_bottom = 536.0
+offset_bottom = 288.0
 
 [node name="UpgradesLabel" type="Label" parent="UpgradesPanelBackground/UpgradesContainer"]
 layout_mode = 2
