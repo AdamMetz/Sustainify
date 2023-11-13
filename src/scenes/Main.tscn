@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cui2g3w0tf1qp"]
+[gd_scene load_steps=18 format=3 uid="uid://cui2g3w0tf1qp"]
 
 [ext_resource type="Script" path="res://scenes/Main.gd" id="1_y24vv"]
 [ext_resource type="Texture2D" uid="uid://b0o5vwmdvugfc" path="res://assets/Generator-Dummy-Image.png" id="2_cuce1"]
@@ -15,6 +15,8 @@
 [ext_resource type="Script" path="res://scenes/Upgrades/WindTurbineUpgrade.gd" id="10_yiprw"]
 [ext_resource type="Script" path="res://scenes/Upgrades/SolarPanelUpgrade.gd" id="11_l53tf"]
 [ext_resource type="Script" path="res://scenes/Upgrades/HydroDamUpgrade.gd" id="12_w8fqh"]
+[ext_resource type="Texture2D" uid="uid://dhcjb0eqdjfi6" path="res://assets/Cloud-1.png" id="16_80laj"]
+[ext_resource type="Script" path="res://scenes/Cloud.gd" id="17_p223b"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -503,6 +505,36 @@ offset_top = 448.0
 offset_right = 64.0
 offset_bottom = 501.0
 texture = ExtResource("3_vsn51")
+
+[node name="Cloud" type="TextureRect" parent="Background/Trees"]
+offset_left = 704.0
+offset_top = 24.0
+offset_right = 854.0
+offset_bottom = 124.0
+texture = ExtResource("16_80laj")
+script = ExtResource("17_p223b")
+
+[node name="Cloud2" type="TextureRect" parent="Background/Trees"]
+offset_left = 320.0
+offset_top = 112.0
+offset_right = 470.0
+offset_bottom = 212.0
+texture = ExtResource("16_80laj")
+script = ExtResource("17_p223b")
+
+[node name="Clouds" type="Control" parent="Background"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Cloud" type="TextureRect" parent="Background/Clouds"]
+layout_mode = 0
+offset_left = 832.0
+offset_top = 240.0
+offset_right = 982.0
+offset_bottom = 340.0
+texture = ExtResource("16_80laj")
+script = ExtResource("17_p223b")
 
 [node name="ClickerButton" type="TextureButton" parent="."]
 layout_mode = 1
