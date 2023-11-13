@@ -30,7 +30,7 @@ func update_points(pointsDelta : int):
 
 func update_points_per_second(points_per_second_delta: int):
 	points_per_second += points_per_second_delta
-	$PointsPerSecondLabel.text = str(points_per_second) + "/s"
+	$PointsPerSecondLabel.text = "+" + str(points_per_second) + "/second"
 
 func _on_clicker_button_button_down():
 	update_points(points_per_click)

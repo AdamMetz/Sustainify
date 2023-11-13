@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cui2g3w0tf1qp"]
+[gd_scene load_steps=16 format=3 uid="uid://cui2g3w0tf1qp"]
 
 [ext_resource type="Script" path="res://scenes/Main.gd" id="1_y24vv"]
 [ext_resource type="Texture2D" uid="uid://b0o5vwmdvugfc" path="res://assets/Generator-Dummy-Image.png" id="2_cuce1"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://wbmls4xd5htk" path="res://assets/Coin.png" id="3_h1xie"]
 [ext_resource type="Texture2D" uid="uid://nqptkfdm5ehx" path="res://assets/Tree-1.png" id="3_vsn51"]
 [ext_resource type="Script" path="res://scenes/Generators/WindTurbineGenerator.gd" id="4_13tw6"]
+[ext_resource type="Texture2D" uid="uid://bin3v7nu53p4d" path="res://assets/Button.png" id="4_rr22n"]
+[ext_resource type="Texture2D" uid="uid://x6qyph1m28c2" path="res://assets/ButtonPressed.png" id="5_tbuyy"]
 [ext_resource type="Script" path="res://scenes/Generators/SolarPanelGenerator.gd" id="7_ynbc8"]
 [ext_resource type="Script" path="res://scenes/Generators/HydroDamGenerator.gd" id="8_qmw3r"]
 [ext_resource type="Script" path="res://scenes/Upgrades/BetterClicksUpgrade.gd" id="9_mpnsb"]
@@ -71,9 +73,9 @@ offset_bottom = 413.0
 texture = ExtResource("3_vsn51")
 
 [node name="Tree6" type="TextureRect" parent="Background/Trees"]
-offset_left = -16.0
+offset_left = 16.0
 offset_top = 408.0
-offset_right = 24.0
+offset_right = 56.0
 offset_bottom = 461.0
 texture = ExtResource("3_vsn51")
 
@@ -483,22 +485,36 @@ offset_bottom = 533.0
 texture = ExtResource("3_vsn51")
 
 [node name="Tree65" type="TextureRect" parent="Background/Trees"]
-offset_left = 1136.0
-offset_top = 416.0
-offset_right = 1176.0
-offset_bottom = 469.0
+offset_left = 1112.0
+offset_top = 408.0
+offset_right = 1152.0
+offset_bottom = 461.0
 texture = ExtResource("3_vsn51")
 
-[node name="ClickerButton" type="Button" parent="."]
+[node name="Tree66" type="TextureRect" parent="Background/Trees"]
+offset_top = 480.0
+offset_right = 40.0
+offset_bottom = 533.0
+texture = ExtResource("3_vsn51")
+
+[node name="Tree67" type="TextureRect" parent="Background/Trees"]
+offset_left = 24.0
+offset_top = 448.0
+offset_right = 64.0
+offset_bottom = 501.0
+texture = ExtResource("3_vsn51")
+
+[node name="ClickerButton" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = -1
-offset_left = 520.0
-offset_top = 544.0
-offset_right = 632.0
-offset_bottom = 640.0
+offset_left = 496.0
+offset_top = 560.0
+offset_right = 646.0
+offset_bottom = 632.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Button"
+texture_normal = ExtResource("4_rr22n")
+texture_pressed = ExtResource("5_tbuyy")
 
 [node name="PointsPerSecondLabel" type="Label" parent="."]
 layout_mode = 0
@@ -506,9 +522,10 @@ offset_left = 448.0
 offset_top = 128.0
 offset_right = 704.0
 offset_bottom = 160.0
+theme_override_colors/font_color = Color(0.227451, 0.419608, 0.486275, 1)
 theme_override_fonts/font = ExtResource("3_0avik")
 theme_override_font_sizes/font_size = 35
-text = "1/second"
+text = "+1/second"
 horizontal_alignment = 1
 
 [node name="PointsLabel" type="Label" parent="."]
@@ -517,6 +534,8 @@ offset_left = 256.0
 offset_top = 72.0
 offset_right = 896.0
 offset_bottom = 127.0
+theme_override_colors/font_color = Color(0.227451, 0.419608, 0.486275, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_0avik")
 theme_override_font_sizes/font_size = 50
 text = "111"
@@ -528,16 +547,18 @@ autostart = true
 
 [node name="GeneratorsPanelBackground" type="ColorRect" parent="."]
 layout_mode = 0
-offset_left = 927.0
-offset_top = 31.0
-offset_right = 1121.0
-offset_bottom = 320.0
+offset_left = 920.0
+offset_top = 24.0
+offset_right = 1128.0
+offset_bottom = 328.0
 color = Color(0.823529, 0.670588, 0.6, 1)
 
 [node name="GeneratorsContainer" type="VBoxContainer" parent="GeneratorsPanelBackground"]
 layout_mode = 0
-offset_right = 194.0
-offset_bottom = 289.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 200.0
+offset_bottom = 296.0
 
 [node name="GeneratorsLabel" type="Label" parent="GeneratorsPanelBackground/GeneratorsContainer"]
 layout_mode = 2
@@ -670,16 +691,18 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 
 [node name="UpgradesPanelBackground" type="ColorRect" parent="."]
 layout_mode = 0
-offset_left = 32.0
-offset_top = 32.0
-offset_right = 224.0
-offset_bottom = 320.0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 232.0
+offset_bottom = 328.0
 color = Color(0.823529, 0.670588, 0.6, 1)
 
 [node name="UpgradesContainer" type="VBoxContainer" parent="UpgradesPanelBackground"]
 layout_mode = 0
-offset_right = 192.0
-offset_bottom = 288.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 200.0
+offset_bottom = 296.0
 
 [node name="UpgradesLabel" type="Label" parent="UpgradesPanelBackground/UpgradesContainer"]
 layout_mode = 2
