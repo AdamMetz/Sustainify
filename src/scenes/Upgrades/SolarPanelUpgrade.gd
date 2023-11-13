@@ -4,4 +4,4 @@ class_name SolarPanelUpgrade
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	self.init("Efficient Solar Panels", "Solar Panel", 10, 5)
+	self.init("Solar Panels", "Solar Panel", 10, 5)
