@@ -1,10 +1,9 @@
-[gd_scene load_steps=22 format=3 uid="uid://cui2g3w0tf1qp"]
+[gd_scene load_steps=25 format=3 uid="uid://cui2g3w0tf1qp"]
 
 [ext_resource type="Script" path="res://scenes/Main.gd" id="1_y24vv"]
 [ext_resource type="Texture2D" uid="uid://b0o5vwmdvugfc" path="res://assets/Generator-Dummy-Image.png" id="2_cuce1"]
 [ext_resource type="Texture2D" uid="uid://cdq84fb1nf85d" path="res://assets/Background.png" id="2_w8t11"]
 [ext_resource type="FontFile" uid="uid://cl57fd2n5body" path="res://assets/fonts/pixel font-7.ttf" id="3_0avik"]
-[ext_resource type="Texture2D" uid="uid://wbmls4xd5htk" path="res://assets/Coin.png" id="3_h1xie"]
 [ext_resource type="Texture2D" uid="uid://nqptkfdm5ehx" path="res://assets/Tree-1.png" id="3_vsn51"]
 [ext_resource type="Script" path="res://scenes/Generators/WindTurbineGenerator.gd" id="4_13tw6"]
 [ext_resource type="Texture2D" uid="uid://cg3gpf562ewo3" path="res://assets/Wind-Turbine.png" id="4_l2hjb"]
@@ -19,8 +18,12 @@
 [ext_resource type="Script" path="res://scenes/Upgrades/HydroDamUpgrade.gd" id="12_w8fqh"]
 [ext_resource type="Texture2D" uid="uid://bckjt5v1pan4g" path="res://assets/ShopButton.png" id="13_762w0"]
 [ext_resource type="Texture2D" uid="uid://6nit43gojt1v" path="res://assets/ShopButtonPressed.png" id="14_5jb85"]
+[ext_resource type="Texture2D" uid="uid://dqr6c8fxg2oc3" path="res://assets/ShopButtonDisabled.png" id="14_htohr"]
+[ext_resource type="Script" path="res://scenes/ShopButton.gd" id="14_j1jyl"]
 [ext_resource type="Texture2D" uid="uid://dhcjb0eqdjfi6" path="res://assets/Cloud-1.png" id="16_80laj"]
 [ext_resource type="Script" path="res://scenes/Cloud.gd" id="17_p223b"]
+[ext_resource type="Texture2D" uid="uid://djmyhpifi3jvs" path="res://assets/InfoAlert.png" id="22_21vly"]
+[ext_resource type="Script" path="res://scenes/InfoAlert.gd" id="23_6gd2c"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -618,10 +621,10 @@ texture = ExtResource("3_vsn51")
 
 [node name="Tree76" type="TextureRect" parent="Background/Trees"]
 layout_mode = 0
-offset_left = 248.0
-offset_top = 576.0
-offset_right = 288.0
-offset_bottom = 629.0
+offset_left = 256.0
+offset_top = 560.0
+offset_right = 296.0
+offset_bottom = 613.0
 texture = ExtResource("3_vsn51")
 
 [node name="Tree77" type="TextureRect" parent="Background/Trees"]
@@ -826,10 +829,10 @@ texture = ExtResource("3_vsn51")
 
 [node name="Tree102" type="TextureRect" parent="Background/Trees"]
 layout_mode = 0
-offset_left = 200.0
-offset_top = 592.0
-offset_right = 240.0
-offset_bottom = 645.0
+offset_left = 216.0
+offset_top = 576.0
+offset_right = 256.0
+offset_bottom = 629.0
 texture = ExtResource("3_vsn51")
 
 [node name="Tree103" type="TextureRect" parent="Background/Trees"]
@@ -858,10 +861,18 @@ texture = ExtResource("3_vsn51")
 
 [node name="Tree106" type="TextureRect" parent="Background/Trees"]
 layout_mode = 0
-offset_left = 232.0
+offset_left = 224.0
 offset_top = 424.0
-offset_right = 332.0
+offset_right = 324.0
 offset_bottom = 548.0
+texture = ExtResource("4_l2hjb")
+
+[node name="Tree72" type="TextureRect" parent="Background/Trees"]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 440.0
+offset_right = 276.0
+offset_bottom = 564.0
 texture = ExtResource("4_l2hjb")
 
 [node name="Clouds" type="Control" parent="Background"]
@@ -917,7 +928,7 @@ offset_bottom = 160.0
 theme_override_colors/font_color = Color(0.227451, 0.419608, 0.486275, 1)
 theme_override_fonts/font = ExtResource("3_0avik")
 theme_override_font_sizes/font_size = 35
-text = "+1/second"
+text = "+$1/second"
 horizontal_alignment = 1
 
 [node name="PointsLabel" type="Label" parent="."]
@@ -930,7 +941,7 @@ theme_override_colors/font_color = Color(0.227451, 0.419608, 0.486275, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_0avik")
 theme_override_font_sizes/font_size = 50
-text = "111"
+text = "$111"
 horizontal_alignment = 1
 vertical_alignment = 2
 
@@ -989,14 +1000,12 @@ text = "Wind Turbine"
 layout_mode = 2
 alignment = 1
 
-[node name="CoinImage" type="TextureRect" parent="GeneratorsPanelBackground/GeneratorsContainer/WindTurbineGenerator/NameAndCostContainer/CostContainer"]
-layout_mode = 2
-texture = ExtResource("3_h1xie")
-
 [node name="CostLabel" type="Label" parent="GeneratorsPanelBackground/GeneratorsContainer/WindTurbineGenerator/NameAndCostContainer/CostContainer"]
+custom_minimum_size = Vector2(110, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "10"
+text = "$10"
+horizontal_alignment = 1
 
 [node name="PointsPerSecondLabel" type="Label" parent="GeneratorsPanelBackground/GeneratorsContainer/WindTurbineGenerator/NameAndCostContainer/CostContainer"]
 layout_mode = 2
@@ -1018,15 +1027,19 @@ text = "0x"
 layout_mode = 2
 texture_normal = ExtResource("13_762w0")
 texture_pressed = ExtResource("14_5jb85")
+texture_disabled = ExtResource("14_htohr")
 stretch_mode = 0
+script = ExtResource("14_j1jyl")
 
 [node name="SolarPanelGenerator" type="HBoxContainer" parent="GeneratorsPanelBackground/GeneratorsContainer"]
 layout_mode = 2
 script = ExtResource("7_ynbc8")
 
 [node name="GeneratorImage" type="TextureRect" parent="GeneratorsPanelBackground/GeneratorsContainer/SolarPanelGenerator"]
+custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 texture = ExtResource("2_cuce1")
+expand_mode = 1
 
 [node name="NameAndCostContainer" type="VBoxContainer" parent="GeneratorsPanelBackground/GeneratorsContainer/SolarPanelGenerator"]
 layout_mode = 2
@@ -1034,20 +1047,26 @@ layout_mode = 2
 [node name="GeneratorName" type="Label" parent="GeneratorsPanelBackground/GeneratorsContainer/SolarPanelGenerator/NameAndCostContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0avik")
+theme_override_font_sizes/font_size = 20
 text = "Wind Turbine"
 
 [node name="CostContainer" type="HBoxContainer" parent="GeneratorsPanelBackground/GeneratorsContainer/SolarPanelGenerator/NameAndCostContainer"]
 layout_mode = 2
 alignment = 1
 
-[node name="CoinImage" type="TextureRect" parent="GeneratorsPanelBackground/GeneratorsContainer/SolarPanelGenerator/NameAndCostContainer/CostContainer"]
-layout_mode = 2
-texture = ExtResource("3_h1xie")
-
 [node name="CostLabel" type="Label" parent="GeneratorsPanelBackground/GeneratorsContainer/SolarPanelGenerator/NameAndCostContainer/CostContainer"]
+custom_minimum_size = Vector2(110, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "10"
+text = "$10"
+horizontal_alignment = 1
+
+[node name="PointsPerSecondLabel" type="Label" parent="GeneratorsPanelBackground/GeneratorsContainer/SolarPanelGenerator/NameAndCostContainer/CostContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0avik")
+theme_override_font_sizes/font_size = 20
 
 [node name="NumberOwnedAndPointsPerSecondContainer" type="VBoxContainer" parent="GeneratorsPanelBackground/GeneratorsContainer/SolarPanelGenerator"]
 layout_mode = 2
@@ -1055,19 +1074,27 @@ layout_mode = 2
 [node name="NumberGeneratorOwnedLabel" type="Label" parent="GeneratorsPanelBackground/GeneratorsContainer/SolarPanelGenerator/NumberOwnedAndPointsPerSecondContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0avik")
+theme_override_font_sizes/font_size = 20
 text = "0x"
 
-[node name="PointsPerSecondLabel" type="Label" parent="GeneratorsPanelBackground/GeneratorsContainer/SolarPanelGenerator/NumberOwnedAndPointsPerSecondContainer"]
+[node name="ShopButton" type="TextureButton" parent="GeneratorsPanelBackground/GeneratorsContainer/SolarPanelGenerator/NumberOwnedAndPointsPerSecondContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+texture_normal = ExtResource("13_762w0")
+texture_pressed = ExtResource("14_5jb85")
+texture_disabled = ExtResource("14_htohr")
+stretch_mode = 0
+script = ExtResource("14_j1jyl")
 
 [node name="HydroDamGenerator" type="HBoxContainer" parent="GeneratorsPanelBackground/GeneratorsContainer"]
 layout_mode = 2
 script = ExtResource("8_qmw3r")
 
 [node name="GeneratorImage" type="TextureRect" parent="GeneratorsPanelBackground/GeneratorsContainer/HydroDamGenerator"]
+custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 texture = ExtResource("2_cuce1")
+expand_mode = 1
 
 [node name="NameAndCostContainer" type="VBoxContainer" parent="GeneratorsPanelBackground/GeneratorsContainer/HydroDamGenerator"]
 layout_mode = 2
@@ -1075,20 +1102,26 @@ layout_mode = 2
 [node name="GeneratorName" type="Label" parent="GeneratorsPanelBackground/GeneratorsContainer/HydroDamGenerator/NameAndCostContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0avik")
+theme_override_font_sizes/font_size = 20
 text = "Wind Turbine"
 
 [node name="CostContainer" type="HBoxContainer" parent="GeneratorsPanelBackground/GeneratorsContainer/HydroDamGenerator/NameAndCostContainer"]
 layout_mode = 2
 alignment = 1
 
-[node name="CoinImage" type="TextureRect" parent="GeneratorsPanelBackground/GeneratorsContainer/HydroDamGenerator/NameAndCostContainer/CostContainer"]
-layout_mode = 2
-texture = ExtResource("3_h1xie")
-
 [node name="CostLabel" type="Label" parent="GeneratorsPanelBackground/GeneratorsContainer/HydroDamGenerator/NameAndCostContainer/CostContainer"]
+custom_minimum_size = Vector2(110, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "10"
+text = "$10"
+horizontal_alignment = 1
+
+[node name="PointsPerSecondLabel" type="Label" parent="GeneratorsPanelBackground/GeneratorsContainer/HydroDamGenerator/NameAndCostContainer/CostContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0avik")
+theme_override_font_sizes/font_size = 20
 
 [node name="NumberOwnedAndPointsPerSecondContainer" type="VBoxContainer" parent="GeneratorsPanelBackground/GeneratorsContainer/HydroDamGenerator"]
 layout_mode = 2
@@ -1096,11 +1129,17 @@ layout_mode = 2
 [node name="NumberGeneratorOwnedLabel" type="Label" parent="GeneratorsPanelBackground/GeneratorsContainer/HydroDamGenerator/NumberOwnedAndPointsPerSecondContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0avik")
+theme_override_font_sizes/font_size = 20
 text = "0x"
 
-[node name="PointsPerSecondLabel" type="Label" parent="GeneratorsPanelBackground/GeneratorsContainer/HydroDamGenerator/NumberOwnedAndPointsPerSecondContainer"]
+[node name="ShopButton" type="TextureButton" parent="GeneratorsPanelBackground/GeneratorsContainer/HydroDamGenerator/NumberOwnedAndPointsPerSecondContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+texture_normal = ExtResource("13_762w0")
+texture_pressed = ExtResource("14_5jb85")
+texture_disabled = ExtResource("14_htohr")
+stretch_mode = 0
+script = ExtResource("14_j1jyl")
 
 [node name="UpgradesPanelBackground" type="TextureRect" parent="."]
 layout_mode = 0
@@ -1242,19 +1281,23 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "1/5"
 
-[node name="Tree16" type="TextureRect" parent="."]
+[node name="InfoAlert" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 168.0
-offset_top = 448.0
-offset_right = 268.0
-offset_bottom = 572.0
-texture = ExtResource("4_l2hjb")
+offset_left = 224.0
+offset_top = 360.0
+offset_right = 264.0
+offset_bottom = 400.0
+texture = ExtResource("22_21vly")
+script = ExtResource("23_6gd2c")
 
 [connection signal="button_down" from="ClickerButton" to="." method="_on_clicker_button_button_down"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="gui_input" from="GeneratorsPanelBackground/GeneratorsContainer/WindTurbineGenerator" to="GeneratorsPanelBackground/GeneratorsContainer/WindTurbineGenerator" method="_on_gui_input"]
+[connection signal="button_down" from="GeneratorsPanelBackground/GeneratorsContainer/WindTurbineGenerator/NumberOwnedAndPointsPerSecondContainer/ShopButton" to="GeneratorsPanelBackground/GeneratorsContainer/WindTurbineGenerator" method="_on_shop_button_button_down"]
 [connection signal="gui_input" from="GeneratorsPanelBackground/GeneratorsContainer/SolarPanelGenerator" to="GeneratorsPanelBackground/GeneratorsContainer/SolarPanelGenerator" method="_on_gui_input"]
+[connection signal="button_down" from="GeneratorsPanelBackground/GeneratorsContainer/SolarPanelGenerator/NumberOwnedAndPointsPerSecondContainer/ShopButton" to="GeneratorsPanelBackground/GeneratorsContainer/SolarPanelGenerator" method="_on_shop_button_button_down"]
 [connection signal="gui_input" from="GeneratorsPanelBackground/GeneratorsContainer/HydroDamGenerator" to="GeneratorsPanelBackground/GeneratorsContainer/HydroDamGenerator" method="_on_gui_input"]
+[connection signal="button_down" from="GeneratorsPanelBackground/GeneratorsContainer/HydroDamGenerator/NumberOwnedAndPointsPerSecondContainer/ShopButton" to="GeneratorsPanelBackground/GeneratorsContainer/HydroDamGenerator" method="_on_shop_button_button_down"]
 [connection signal="gui_input" from="UpgradesPanelBackground/UpgradesContainer/ClickerUpgradeContainer" to="UpgradesPanelBackground/UpgradesContainer/ClickerUpgradeContainer" method="_on_gui_input"]
 [connection signal="gui_input" from="UpgradesPanelBackground/UpgradesContainer/WindTurbineUpgradeContainer" to="UpgradesPanelBackground/UpgradesContainer/WindTurbineUpgradeContainer" method="_on_gui_input"]
 [connection signal="gui_input" from="UpgradesPanelBackground/UpgradesContainer/SolarPanelUpgradeContainer" to="UpgradesPanelBackground/UpgradesContainer/SolarPanelUpgradeContainer" method="_on_gui_input"]
