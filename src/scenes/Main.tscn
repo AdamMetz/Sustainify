@@ -170,7 +170,6 @@ offset_left = 200.0
 offset_top = 400.0
 offset_right = 300.0
 offset_bottom = 524.0
-texture = ExtResource("4_l2hjb")
 
 [node name="Tree17" type="TextureRect" parent="Background/Trees"]
 layout_mode = 0
@@ -865,7 +864,6 @@ offset_left = 224.0
 offset_top = 424.0
 offset_right = 324.0
 offset_bottom = 548.0
-texture = ExtResource("4_l2hjb")
 
 [node name="Tree72" type="TextureRect" parent="Background/Trees"]
 layout_mode = 0
@@ -873,7 +871,6 @@ offset_left = 176.0
 offset_top = 440.0
 offset_right = 276.0
 offset_bottom = 564.0
-texture = ExtResource("4_l2hjb")
 
 [node name="Clouds" type="Control" parent="Background"]
 anchors_preset = 0
@@ -952,7 +949,7 @@ autostart = true
 layout_mode = 0
 offset_left = 16.0
 offset_top = 16.0
-offset_right = 248.0
+offset_right = 288.0
 offset_bottom = 320.0
 texture = ExtResource("10_ep0ko")
 
@@ -963,9 +960,9 @@ anchor_left = 0.071
 anchor_top = 0.026
 anchor_right = 0.929
 anchor_bottom = 0.974
-offset_left = 0.0959997
+offset_left = 0.255999
 offset_top = 0.0959997
-offset_right = -12.096
+offset_right = 2.74399
 offset_bottom = -0.0960083
 
 [node name="GeneratorsLabel" type="Label" parent="GeneratorsPanelBackground/GeneratorsContainer"]
@@ -1001,13 +998,14 @@ layout_mode = 2
 alignment = 1
 
 [node name="CostLabel" type="Label" parent="GeneratorsPanelBackground/GeneratorsContainer/WindTurbineGenerator/NameAndCostContainer/CostContainer"]
-custom_minimum_size = Vector2(110, 0)
+custom_minimum_size = Vector2(75, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "$10"
 horizontal_alignment = 1
 
 [node name="PointsPerSecondLabel" type="Label" parent="GeneratorsPanelBackground/GeneratorsContainer/WindTurbineGenerator/NameAndCostContainer/CostContainer"]
+custom_minimum_size = Vector2(70, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_0avik")
@@ -1056,13 +1054,14 @@ layout_mode = 2
 alignment = 1
 
 [node name="CostLabel" type="Label" parent="GeneratorsPanelBackground/GeneratorsContainer/SolarPanelGenerator/NameAndCostContainer/CostContainer"]
-custom_minimum_size = Vector2(110, 0)
+custom_minimum_size = Vector2(75, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "$10"
 horizontal_alignment = 1
 
 [node name="PointsPerSecondLabel" type="Label" parent="GeneratorsPanelBackground/GeneratorsContainer/SolarPanelGenerator/NameAndCostContainer/CostContainer"]
+custom_minimum_size = Vector2(70, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_0avik")
@@ -1111,13 +1110,14 @@ layout_mode = 2
 alignment = 1
 
 [node name="CostLabel" type="Label" parent="GeneratorsPanelBackground/GeneratorsContainer/HydroDamGenerator/NameAndCostContainer/CostContainer"]
-custom_minimum_size = Vector2(110, 0)
+custom_minimum_size = Vector2(75, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "$10"
 horizontal_alignment = 1
 
 [node name="PointsPerSecondLabel" type="Label" parent="GeneratorsPanelBackground/GeneratorsContainer/HydroDamGenerator/NameAndCostContainer/CostContainer"]
+custom_minimum_size = Vector2(70, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_0avik")
@@ -1142,6 +1142,7 @@ stretch_mode = 0
 script = ExtResource("14_j1jyl")
 
 [node name="UpgradesPanelBackground" type="TextureRect" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 912.0
 offset_top = 16.0
@@ -1282,13 +1283,44 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "1/5"
 
 [node name="InfoAlert" type="TextureRect" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 224.0
-offset_top = 360.0
+offset_top = 352.0
 offset_right = 264.0
-offset_bottom = 400.0
+offset_bottom = 392.0
 texture = ExtResource("22_21vly")
 script = ExtResource("23_6gd2c")
+
+[node name="EducationalPopup" type="TextureRect" parent="."]
+visible = false
+offset_left = 480.0
+offset_top = 192.0
+offset_right = 680.0
+offset_bottom = 492.0
+texture = ExtResource("10_ep0ko")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="EducationalPopup"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 184.0
+offset_bottom = 288.0
+
+[node name="TitleLabel" type="Label" parent="EducationalPopup/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0avik")
+text = "Wind Turbines"
+horizontal_alignment = 1
+
+[node name="TextLabel" type="Label" parent="EducationalPopup/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0avik")
+text = "Information about Wind Turbines... Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci 
+velit"
+autowrap_mode = 2
 
 [connection signal="button_down" from="ClickerButton" to="." method="_on_clicker_button_button_down"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
@@ -1302,3 +1334,4 @@ script = ExtResource("23_6gd2c")
 [connection signal="gui_input" from="UpgradesPanelBackground/UpgradesContainer/WindTurbineUpgradeContainer" to="UpgradesPanelBackground/UpgradesContainer/WindTurbineUpgradeContainer" method="_on_gui_input"]
 [connection signal="gui_input" from="UpgradesPanelBackground/UpgradesContainer/SolarPanelUpgradeContainer" to="UpgradesPanelBackground/UpgradesContainer/SolarPanelUpgradeContainer" method="_on_gui_input"]
 [connection signal="gui_input" from="UpgradesPanelBackground/UpgradesContainer/HydroDamUpgradeContainer" to="UpgradesPanelBackground/UpgradesContainer/HydroDamUpgradeContainer" method="_on_gui_input"]
+[connection signal="gui_input" from="InfoAlert" to="InfoAlert" method="_on_gui_input"]

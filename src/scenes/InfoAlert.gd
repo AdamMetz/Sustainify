@@ -20,3 +20,9 @@ func _process(delta):
 		if (self.position.y - movement_amount > original_y):
 			self.position.y -= movement_amount
 		else: moving_up = true	
+
+func _on_gui_input(event):
+	if (event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed):
+		var main_node = get_parent()
+		var popup = main_node.get_node("EducationalPopup")
+		popup.show()

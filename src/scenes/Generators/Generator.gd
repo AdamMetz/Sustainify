@@ -68,8 +68,8 @@ func set_number_owned_label():
 	number_owned_label_node.text = str(self.number_owned) + "x"
 	
 func set_points_per_second_label():
-	#var points_per_second_label_node = self.get_node("NumberOwnedAndPointsPerSecondContainer/PointsPerSecondLabel")
-	#/points_per_second_label_node.text = "+" + str(self.points_per_second) + "/s"
+	var points_per_second_label_node = self.get_node("NameAndCostContainer/CostContainer/PointsPerSecondLabel")
+	points_per_second_label_node.text = "+$" + str(self.points_per_second) + "/s"
 	pass
 
 # Signals #
@@ -80,5 +80,15 @@ func _on_shop_button_button_down():
 		emit_signal("generator_purchased", self)
 		update_cost()
 		update_number_owned()
+		
+		if (self.generator_name == "Wind Turbine"):
+			# 16 106 72
+			if (self.number_owned == 1):
+				main_node.get_node("Background/Trees/Tree16").texture = preload("res://assets/Wind-Turbine.png")
+			elif (self.number_owned == 2):
+				main_node.get_node("Background/Trees/Tree106").texture = preload("res://assets/Wind-Turbine.png")
+			elif (self.number_owned == 3):
+				main_node.get_node("Background/Trees/Tree72").texture = preload("res://assets/Wind-Turbine.png")
+			main_node.get_node("InfoAlert").show()
 	else:
 		print("Cannot afford") # Debugging
