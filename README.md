@@ -22,3 +22,6 @@ With the constantly increasing urgency of climate change, it becomes more and mo
 
 The following assets are from ["UI Assets Pack 2"](https://srtoasty.itch.io/ui-assets-pack-2)
  - InfoAlert.png
+
+The following assets are from [PixelArtMaker](https://pixelartmaker.com/art/cc4b4c41e81d81c)
+ - SolarPanel.png
