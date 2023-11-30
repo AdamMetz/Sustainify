@@ -58,7 +58,7 @@ func update_number_owned():
 
 func set_cost_label():
 	var cost_label_node = self.get_node("NameAndCostContainer/CostContainer/CostLabel")
-	cost_label_node.text = str(self.cost)
+	cost_label_node.text = "$" + str(self.cost)
 	
 func set_upgrade_name_label():
 	var upgrade_name_label_node = self.get_node("NameAndCostContainer/NameLabel")

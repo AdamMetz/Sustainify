@@ -1,7 +1,7 @@
 extends './Generator.gd'
 
-class_name HydroDamGenerator
+class_name ReforestationGenerator
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	self.init("Hydro Dam", 1000, 50)
+	self.init("Reforestation", 1, 50)

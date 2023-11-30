@@ -82,13 +82,18 @@ func _on_shop_button_button_down():
 		update_number_owned()
 		
 		if (self.generator_name == "Wind Turbine"):
-			# 16 106 72
-			if (self.number_owned == 1):
-				main_node.get_node("Background/Trees/Tree16").texture = preload("res://assets/Wind-Turbine.png")
-			elif (self.number_owned == 2):
-				main_node.get_node("Background/Trees/Tree106").texture = preload("res://assets/Wind-Turbine.png")
-			elif (self.number_owned == 3):
-				main_node.get_node("Background/Trees/Tree72").texture = preload("res://assets/Wind-Turbine.png")
-			main_node.get_node("InfoAlert").show()
+			if (self.number_owned <= 3):
+				main_node.get_node("Background/WindTurbines/WindTurbine" +str(number_owned)).texture = preload("res://assets/Wind-Turbine.png")
+			main_node.get_node("InfoAlerts/WindTurbineInfoAlert").show()
+			
+		if (self.generator_name == "Solar Panel"):
+			if (self.number_owned <= 3):
+				main_node.get_node("Background/SolarPanels/SolarPanel" +str(number_owned)).texture = preload("res://assets/SolarPanel.png")
+			main_node.get_node("InfoAlerts/SolarPanelInfoAlert").show()
+			
+		if (self.generator_name == "Reforestation"):
+			if (self.number_owned <= 3):
+				main_node.get_node("Background/ReforestationTrees/Reforestation" +str(number_owned)).texture = preload("res://assets/Tree-1.png")
+			main_node.get_node("InfoAlerts/ReforestationInfoAlert").show()
 	else:
 		print("Cannot afford") # Debugging
