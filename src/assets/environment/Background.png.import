@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqr6c8fxg2oc3"
-path="res://.godot/imported/ShopButtonDisabled.png-00c9d0fd02545bc456ba19d6200bf85d.ctex"
+uid="uid://cdq84fb1nf85d"
+path="res://.godot/imported/Background.png-8389cd81e3c4aee1bb5673e4eef98adf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ShopButtonDisabled.png"
-dest_files=["res://.godot/imported/ShopButtonDisabled.png-00c9d0fd02545bc456ba19d6200bf85d.ctex"]
+source_file="res://assets/environment/Background.png"
+dest_files=["res://.godot/imported/Background.png-8389cd81e3c4aee1bb5673e4eef98adf.ctex"]
 
 [params]
 

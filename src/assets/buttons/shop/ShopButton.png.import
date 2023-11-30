@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cg3gpf562ewo3"
-path="res://.godot/imported/Wind-Turbine.png-025b80b4d82a09d16e7443fd4fa216cd.ctex"
+uid="uid://bckjt5v1pan4g"
+path="res://.godot/imported/ShopButton.png-0553c984e6e3ee524af654061407d7e9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Wind-Turbine.png"
-dest_files=["res://.godot/imported/Wind-Turbine.png-025b80b4d82a09d16e7443fd4fa216cd.ctex"]
+source_file="res://assets/buttons/shop/ShopButton.png"
+dest_files=["res://.godot/imported/ShopButton.png-0553c984e6e3ee524af654061407d7e9.ctex"]
 
 [params]
 

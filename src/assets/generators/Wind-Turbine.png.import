@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhcjb0eqdjfi6"
-path="res://.godot/imported/Cloud-1.png-209d9a8931d516958ee2545be0832fea.ctex"
+uid="uid://cg3gpf562ewo3"
+path="res://.godot/imported/Wind-Turbine.png-541f49a580e1bf5bd373f689d5631e86.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Cloud-1.png"
-dest_files=["res://.godot/imported/Cloud-1.png-209d9a8931d516958ee2545be0832fea.ctex"]
+source_file="res://assets/generators/Wind-Turbine.png"
+dest_files=["res://.godot/imported/Wind-Turbine.png-541f49a580e1bf5bd373f689d5631e86.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4mi8iys1hauk"
-path="res://.godot/imported/Shadow.png-8298607a35fda3dc5de9badbe94e9544.ctex"
+uid="uid://b0wqnouh8wjkn"
+path="res://.godot/imported/SolarPanel.png-acd7a9be9789ff4798593288584fd0d1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Shadow.png"
-dest_files=["res://.godot/imported/Shadow.png-8298607a35fda3dc5de9badbe94e9544.ctex"]
+source_file="res://assets/generators/SolarPanel.png"
+dest_files=["res://.godot/imported/SolarPanel.png-acd7a9be9789ff4798593288584fd0d1.ctex"]
 
 [params]
 
