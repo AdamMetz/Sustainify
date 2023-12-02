@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://cui2g3w0tf1qp"]
+[gd_scene load_steps=31 format=3 uid="uid://cui2g3w0tf1qp"]
 
 [ext_resource type="Script" path="res://scenes/Main.gd" id="1_y24vv"]
 [ext_resource type="Texture2D" uid="uid://cdq84fb1nf85d" path="res://assets/environment/Background.png" id="2_y1ksr"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://6nit43gojt1v" path="res://assets/buttons/shop/ShopButtonPressed.png" id="13_73f3v"]
 [ext_resource type="Texture2D" uid="uid://dqr6c8fxg2oc3" path="res://assets/buttons/shop/ShopButtonDisabled.png" id="14_doy2e"]
 [ext_resource type="Script" path="res://scenes/ShopButton.gd" id="14_j1jyl"]
+[ext_resource type="Script" path="res://scenes/UpgradeButton.gd" id="16_ox2uu"]
 [ext_resource type="Texture2D" uid="uid://b0wqnouh8wjkn" path="res://assets/generators/SolarPanel.png" id="17_1ycvc"]
 [ext_resource type="Script" path="res://scenes/Cloud.gd" id="17_p223b"]
 [ext_resource type="Script" path="res://scenes/Generators/ReforestationGenerator.gd" id="18_w4rqh"]
@@ -897,6 +898,206 @@ grow_vertical = 2
 texture_normal = ExtResource("6_tbxj8")
 texture_pressed = ExtResource("7_bat5t")
 
+[node name="UpgradesPanelBackground" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 832.0
+offset_top = 16.0
+offset_right = 1136.0
+offset_bottom = 320.0
+texture = ExtResource("9_jygq8")
+
+[node name="UpgradesContainer" type="VBoxContainer" parent="UpgradesPanelBackground"]
+layout_mode = 1
+offset_left = 24.0
+offset_top = 8.0
+offset_right = 272.0
+offset_bottom = 296.0
+
+[node name="UpgradesLabel" type="Label" parent="UpgradesPanelBackground/UpgradesContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0avik")
+theme_override_font_sizes/font_size = 27
+text = "Upgrades"
+horizontal_alignment = 1
+
+[node name="ClickerUpgradeContainer" type="HBoxContainer" parent="UpgradesPanelBackground/UpgradesContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+script = ExtResource("9_mpnsb")
+
+[node name="NameAndCostContainer" type="VBoxContainer" parent="UpgradesPanelBackground/UpgradesContainer/ClickerUpgradeContainer"]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="UpgradesPanelBackground/UpgradesContainer/ClickerUpgradeContainer/NameAndCostContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Better Clicks"
+
+[node name="CostContainer" type="HBoxContainer" parent="UpgradesPanelBackground/UpgradesContainer/ClickerUpgradeContainer/NameAndCostContainer"]
+layout_mode = 2
+
+[node name="CostLabel" type="Label" parent="UpgradesPanelBackground/UpgradesContainer/ClickerUpgradeContainer/NameAndCostContainer/CostContainer"]
+custom_minimum_size = Vector2(65, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "100"
+horizontal_alignment = 1
+
+[node name="UpgradeIncreaseLabel" type="Label" parent="UpgradesPanelBackground/UpgradesContainer/ClickerUpgradeContainer/NameAndCostContainer/CostContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "$1/click → $2/click"
+horizontal_alignment = 1
+
+[node name="NumberOwnedAndButtonContainer" type="VBoxContainer" parent="UpgradesPanelBackground/UpgradesContainer/ClickerUpgradeContainer"]
+layout_mode = 2
+
+[node name="NumberOwnedLabel" type="Label" parent="UpgradesPanelBackground/UpgradesContainer/ClickerUpgradeContainer/NumberOwnedAndButtonContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "1/5"
+
+[node name="UpgradeButton" type="TextureButton" parent="UpgradesPanelBackground/UpgradesContainer/ClickerUpgradeContainer/NumberOwnedAndButtonContainer"]
+layout_mode = 2
+texture_normal = ExtResource("20_citbn")
+texture_pressed = ExtResource("21_qgvue")
+texture_disabled = ExtResource("22_f5g12")
+script = ExtResource("16_ox2uu")
+
+[node name="WindTurbineUpgradeContainer" type="HBoxContainer" parent="UpgradesPanelBackground/UpgradesContainer"]
+layout_mode = 2
+script = ExtResource("10_yiprw")
+
+[node name="NameAndCostContainer" type="VBoxContainer" parent="UpgradesPanelBackground/UpgradesContainer/WindTurbineUpgradeContainer"]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="UpgradesPanelBackground/UpgradesContainer/WindTurbineUpgradeContainer/NameAndCostContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Better Clicks"
+
+[node name="CostContainer" type="HBoxContainer" parent="UpgradesPanelBackground/UpgradesContainer/WindTurbineUpgradeContainer/NameAndCostContainer"]
+layout_mode = 2
+
+[node name="CostLabel" type="Label" parent="UpgradesPanelBackground/UpgradesContainer/WindTurbineUpgradeContainer/NameAndCostContainer/CostContainer"]
+custom_minimum_size = Vector2(65, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "100"
+horizontal_alignment = 1
+
+[node name="UpgradeIncreaseLabel" type="Label" parent="UpgradesPanelBackground/UpgradesContainer/WindTurbineUpgradeContainer/NameAndCostContainer/CostContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "$5/s → $10/s"
+horizontal_alignment = 1
+
+[node name="NumberOwnedAndButtonContainer" type="VBoxContainer" parent="UpgradesPanelBackground/UpgradesContainer/WindTurbineUpgradeContainer"]
+layout_mode = 2
+
+[node name="NumberOwnedLabel" type="Label" parent="UpgradesPanelBackground/UpgradesContainer/WindTurbineUpgradeContainer/NumberOwnedAndButtonContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "1/5"
+
+[node name="UpgradeButton" type="TextureButton" parent="UpgradesPanelBackground/UpgradesContainer/WindTurbineUpgradeContainer/NumberOwnedAndButtonContainer"]
+layout_mode = 2
+texture_normal = ExtResource("20_citbn")
+texture_pressed = ExtResource("21_qgvue")
+texture_disabled = ExtResource("22_f5g12")
+script = ExtResource("16_ox2uu")
+
+[node name="SolarPanelUpgradeContainer" type="HBoxContainer" parent="UpgradesPanelBackground/UpgradesContainer"]
+layout_mode = 2
+script = ExtResource("11_l53tf")
+
+[node name="NameAndCostContainer" type="VBoxContainer" parent="UpgradesPanelBackground/UpgradesContainer/SolarPanelUpgradeContainer"]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="UpgradesPanelBackground/UpgradesContainer/SolarPanelUpgradeContainer/NameAndCostContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Better Clicks"
+
+[node name="CostContainer" type="HBoxContainer" parent="UpgradesPanelBackground/UpgradesContainer/SolarPanelUpgradeContainer/NameAndCostContainer"]
+layout_mode = 2
+
+[node name="CostLabel" type="Label" parent="UpgradesPanelBackground/UpgradesContainer/SolarPanelUpgradeContainer/NameAndCostContainer/CostContainer"]
+custom_minimum_size = Vector2(65, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "100"
+horizontal_alignment = 1
+
+[node name="UpgradeIncreaseLabel" type="Label" parent="UpgradesPanelBackground/UpgradesContainer/SolarPanelUpgradeContainer/NameAndCostContainer/CostContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "$20/s → $40/s"
+horizontal_alignment = 1
+
+[node name="NumberOwnedAndButtonContainer" type="VBoxContainer" parent="UpgradesPanelBackground/UpgradesContainer/SolarPanelUpgradeContainer"]
+layout_mode = 2
+
+[node name="NumberOwnedLabel" type="Label" parent="UpgradesPanelBackground/UpgradesContainer/SolarPanelUpgradeContainer/NumberOwnedAndButtonContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "1/5"
+
+[node name="UpgradeButton" type="TextureButton" parent="UpgradesPanelBackground/UpgradesContainer/SolarPanelUpgradeContainer/NumberOwnedAndButtonContainer"]
+layout_mode = 2
+texture_normal = ExtResource("20_citbn")
+texture_pressed = ExtResource("21_qgvue")
+texture_disabled = ExtResource("22_f5g12")
+script = ExtResource("16_ox2uu")
+
+[node name="ReforestationUpgradeContainer" type="HBoxContainer" parent="UpgradesPanelBackground/UpgradesContainer"]
+layout_mode = 2
+script = ExtResource("22_ep4yn")
+
+[node name="NameAndCostContainer" type="VBoxContainer" parent="UpgradesPanelBackground/UpgradesContainer/ReforestationUpgradeContainer"]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="UpgradesPanelBackground/UpgradesContainer/ReforestationUpgradeContainer/NameAndCostContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Better Clicks"
+
+[node name="CostContainer" type="HBoxContainer" parent="UpgradesPanelBackground/UpgradesContainer/ReforestationUpgradeContainer/NameAndCostContainer"]
+layout_mode = 2
+
+[node name="CostLabel" type="Label" parent="UpgradesPanelBackground/UpgradesContainer/ReforestationUpgradeContainer/NameAndCostContainer/CostContainer"]
+custom_minimum_size = Vector2(65, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "100"
+horizontal_alignment = 1
+
+[node name="UpgradeIncreaseLabel" type="Label" parent="UpgradesPanelBackground/UpgradesContainer/ReforestationUpgradeContainer/NameAndCostContainer/CostContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "$50/s → $100/s"
+horizontal_alignment = 1
+
+[node name="NumberOwnedAndButtonContainer" type="VBoxContainer" parent="UpgradesPanelBackground/UpgradesContainer/ReforestationUpgradeContainer"]
+layout_mode = 2
+
+[node name="NumberOwnedLabel" type="Label" parent="UpgradesPanelBackground/UpgradesContainer/ReforestationUpgradeContainer/NumberOwnedAndButtonContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "1/5"
+
+[node name="UpgradeButton" type="TextureButton" parent="UpgradesPanelBackground/UpgradesContainer/ReforestationUpgradeContainer/NumberOwnedAndButtonContainer"]
+layout_mode = 2
+texture_normal = ExtResource("20_citbn")
+texture_pressed = ExtResource("21_qgvue")
+texture_disabled = ExtResource("22_f5g12")
+script = ExtResource("16_ox2uu")
+
 [node name="PointsPerSecondLabel" type="Label" parent="."]
 layout_mode = 0
 offset_left = 448.0
@@ -930,7 +1131,7 @@ autostart = true
 layout_mode = 0
 offset_left = 16.0
 offset_top = 16.0
-offset_right = 288.0
+offset_right = 296.0
 offset_bottom = 264.0
 texture = ExtResource("9_jygq8")
 expand_mode = 1
@@ -1120,188 +1321,6 @@ texture_pressed = ExtResource("13_73f3v")
 texture_disabled = ExtResource("14_doy2e")
 script = ExtResource("14_j1jyl")
 
-[node name="UpgradesPanelBackground" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 856.0
-offset_top = 16.0
-offset_right = 1136.0
-offset_bottom = 320.0
-texture = ExtResource("9_jygq8")
-
-[node name="UpgradesContainer" type="VBoxContainer" parent="UpgradesPanelBackground"]
-layout_mode = 1
-offset_left = 24.0
-offset_top = 8.0
-offset_right = 272.0
-offset_bottom = 296.0
-
-[node name="UpgradesLabel" type="Label" parent="UpgradesPanelBackground/UpgradesContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_0avik")
-theme_override_font_sizes/font_size = 27
-text = "Upgrades"
-horizontal_alignment = 1
-
-[node name="ClickerUpgradeContainer" type="HBoxContainer" parent="UpgradesPanelBackground/UpgradesContainer"]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-script = ExtResource("9_mpnsb")
-
-[node name="NameAndCostContainer" type="VBoxContainer" parent="UpgradesPanelBackground/UpgradesContainer/ClickerUpgradeContainer"]
-layout_mode = 2
-
-[node name="NameLabel" type="Label" parent="UpgradesPanelBackground/UpgradesContainer/ClickerUpgradeContainer/NameAndCostContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Better Clicks"
-
-[node name="CostContainer" type="HBoxContainer" parent="UpgradesPanelBackground/UpgradesContainer/ClickerUpgradeContainer/NameAndCostContainer"]
-layout_mode = 2
-
-[node name="CostLabel" type="Label" parent="UpgradesPanelBackground/UpgradesContainer/ClickerUpgradeContainer/NameAndCostContainer/CostContainer"]
-custom_minimum_size = Vector2(50, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "100"
-
-[node name="UpgradeIncreaseLabel" type="Label" parent="UpgradesPanelBackground/UpgradesContainer/ClickerUpgradeContainer/NameAndCostContainer/CostContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "$1/click → $2/click"
-
-[node name="NumberOwnedAndButtonContainer" type="VBoxContainer" parent="UpgradesPanelBackground/UpgradesContainer/ClickerUpgradeContainer"]
-layout_mode = 2
-
-[node name="NumberOwnedLabel" type="Label" parent="UpgradesPanelBackground/UpgradesContainer/ClickerUpgradeContainer/NumberOwnedAndButtonContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "1/5"
-
-[node name="UpgradeButton" type="TextureButton" parent="UpgradesPanelBackground/UpgradesContainer/ClickerUpgradeContainer/NumberOwnedAndButtonContainer"]
-layout_mode = 2
-texture_normal = ExtResource("20_citbn")
-texture_pressed = ExtResource("21_qgvue")
-texture_disabled = ExtResource("22_f5g12")
-script = ExtResource("14_j1jyl")
-
-[node name="WindTurbineUpgradeContainer" type="HBoxContainer" parent="UpgradesPanelBackground/UpgradesContainer"]
-layout_mode = 2
-script = ExtResource("10_yiprw")
-
-[node name="NameAndCostContainer" type="VBoxContainer" parent="UpgradesPanelBackground/UpgradesContainer/WindTurbineUpgradeContainer"]
-layout_mode = 2
-
-[node name="NameLabel" type="Label" parent="UpgradesPanelBackground/UpgradesContainer/WindTurbineUpgradeContainer/NameAndCostContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Better Clicks"
-
-[node name="CostContainer" type="HBoxContainer" parent="UpgradesPanelBackground/UpgradesContainer/WindTurbineUpgradeContainer/NameAndCostContainer"]
-layout_mode = 2
-
-[node name="CostLabel" type="Label" parent="UpgradesPanelBackground/UpgradesContainer/WindTurbineUpgradeContainer/NameAndCostContainer/CostContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "100"
-
-[node name="UpgradeIncreaseLabel" type="Label" parent="UpgradesPanelBackground/UpgradesContainer/WindTurbineUpgradeContainer/NameAndCostContainer/CostContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "$1/click → $2/click"
-
-[node name="NumberOwnedAndButtonContainer" type="VBoxContainer" parent="UpgradesPanelBackground/UpgradesContainer/WindTurbineUpgradeContainer"]
-layout_mode = 2
-
-[node name="NumberOwnedLabel" type="Label" parent="UpgradesPanelBackground/UpgradesContainer/WindTurbineUpgradeContainer/NumberOwnedAndButtonContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "1/5"
-
-[node name="UpgradeButton" type="TextureButton" parent="UpgradesPanelBackground/UpgradesContainer/WindTurbineUpgradeContainer/NumberOwnedAndButtonContainer"]
-layout_mode = 2
-texture_normal = ExtResource("20_citbn")
-texture_pressed = ExtResource("21_qgvue")
-texture_disabled = ExtResource("22_f5g12")
-
-[node name="SolarPanelUpgradeContainer" type="HBoxContainer" parent="UpgradesPanelBackground/UpgradesContainer"]
-layout_mode = 2
-script = ExtResource("11_l53tf")
-
-[node name="NameAndCostContainer" type="VBoxContainer" parent="UpgradesPanelBackground/UpgradesContainer/SolarPanelUpgradeContainer"]
-layout_mode = 2
-
-[node name="NameLabel" type="Label" parent="UpgradesPanelBackground/UpgradesContainer/SolarPanelUpgradeContainer/NameAndCostContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Better Clicks"
-
-[node name="CostContainer" type="HBoxContainer" parent="UpgradesPanelBackground/UpgradesContainer/SolarPanelUpgradeContainer/NameAndCostContainer"]
-layout_mode = 2
-
-[node name="CostLabel" type="Label" parent="UpgradesPanelBackground/UpgradesContainer/SolarPanelUpgradeContainer/NameAndCostContainer/CostContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "100"
-
-[node name="UpgradeIncreaseLabel" type="Label" parent="UpgradesPanelBackground/UpgradesContainer/SolarPanelUpgradeContainer/NameAndCostContainer/CostContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "$1/click → $2/click"
-
-[node name="NumberOwnedAndButtonContainer" type="VBoxContainer" parent="UpgradesPanelBackground/UpgradesContainer/SolarPanelUpgradeContainer"]
-layout_mode = 2
-
-[node name="NumberOwnedLabel" type="Label" parent="UpgradesPanelBackground/UpgradesContainer/SolarPanelUpgradeContainer/NumberOwnedAndButtonContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "1/5"
-
-[node name="UpgradeButton" type="TextureButton" parent="UpgradesPanelBackground/UpgradesContainer/SolarPanelUpgradeContainer/NumberOwnedAndButtonContainer"]
-layout_mode = 2
-texture_normal = ExtResource("20_citbn")
-texture_pressed = ExtResource("21_qgvue")
-texture_disabled = ExtResource("22_f5g12")
-
-[node name="ReforestationUpgradeContainer" type="HBoxContainer" parent="UpgradesPanelBackground/UpgradesContainer"]
-layout_mode = 2
-script = ExtResource("22_ep4yn")
-
-[node name="NameAndCostContainer" type="VBoxContainer" parent="UpgradesPanelBackground/UpgradesContainer/ReforestationUpgradeContainer"]
-layout_mode = 2
-
-[node name="NameLabel" type="Label" parent="UpgradesPanelBackground/UpgradesContainer/ReforestationUpgradeContainer/NameAndCostContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Better Clicks"
-
-[node name="CostContainer" type="HBoxContainer" parent="UpgradesPanelBackground/UpgradesContainer/ReforestationUpgradeContainer/NameAndCostContainer"]
-layout_mode = 2
-
-[node name="CostLabel" type="Label" parent="UpgradesPanelBackground/UpgradesContainer/ReforestationUpgradeContainer/NameAndCostContainer/CostContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "100"
-
-[node name="UpgradeIncreaseLabel" type="Label" parent="UpgradesPanelBackground/UpgradesContainer/ReforestationUpgradeContainer/NameAndCostContainer/CostContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "$1/click → $2/click"
-
-[node name="NumberOwnedAndButtonContainer" type="VBoxContainer" parent="UpgradesPanelBackground/UpgradesContainer/ReforestationUpgradeContainer"]
-layout_mode = 2
-
-[node name="NumberOwnedLabel" type="Label" parent="UpgradesPanelBackground/UpgradesContainer/ReforestationUpgradeContainer/NumberOwnedAndButtonContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "1/5"
-
-[node name="UpgradeButton" type="TextureButton" parent="UpgradesPanelBackground/UpgradesContainer/ReforestationUpgradeContainer/NumberOwnedAndButtonContainer"]
-layout_mode = 2
-texture_normal = ExtResource("20_citbn")
-texture_pressed = ExtResource("21_qgvue")
-texture_disabled = ExtResource("22_f5g12")
-
 [node name="InfoAlerts" type="Control" parent="."]
 anchors_preset = 0
 offset_right = 40.0
@@ -1405,6 +1424,14 @@ text = "Click Anywhere to Continue"
 horizontal_alignment = 1
 
 [connection signal="button_down" from="ClickerButton" to="." method="_on_clicker_button_button_down"]
+[connection signal="gui_input" from="UpgradesPanelBackground/UpgradesContainer/ClickerUpgradeContainer" to="UpgradesPanelBackground/UpgradesContainer/ClickerUpgradeContainer" method="_on_gui_input"]
+[connection signal="button_down" from="UpgradesPanelBackground/UpgradesContainer/ClickerUpgradeContainer/NumberOwnedAndButtonContainer/UpgradeButton" to="UpgradesPanelBackground/UpgradesContainer/ClickerUpgradeContainer" method="_on_upgrade_button_button_down"]
+[connection signal="gui_input" from="UpgradesPanelBackground/UpgradesContainer/WindTurbineUpgradeContainer" to="UpgradesPanelBackground/UpgradesContainer/WindTurbineUpgradeContainer" method="_on_gui_input"]
+[connection signal="button_down" from="UpgradesPanelBackground/UpgradesContainer/WindTurbineUpgradeContainer/NumberOwnedAndButtonContainer/UpgradeButton" to="UpgradesPanelBackground/UpgradesContainer/WindTurbineUpgradeContainer" method="_on_upgrade_button_button_down"]
+[connection signal="gui_input" from="UpgradesPanelBackground/UpgradesContainer/SolarPanelUpgradeContainer" to="UpgradesPanelBackground/UpgradesContainer/SolarPanelUpgradeContainer" method="_on_gui_input"]
+[connection signal="button_down" from="UpgradesPanelBackground/UpgradesContainer/SolarPanelUpgradeContainer/NumberOwnedAndButtonContainer/UpgradeButton" to="UpgradesPanelBackground/UpgradesContainer/SolarPanelUpgradeContainer" method="_on_upgrade_button_button_down"]
+[connection signal="gui_input" from="UpgradesPanelBackground/UpgradesContainer/ReforestationUpgradeContainer" to="UpgradesPanelBackground/UpgradesContainer/ReforestationUpgradeContainer" method="_on_gui_input"]
+[connection signal="button_down" from="UpgradesPanelBackground/UpgradesContainer/ReforestationUpgradeContainer/NumberOwnedAndButtonContainer/UpgradeButton" to="UpgradesPanelBackground/UpgradesContainer/ReforestationUpgradeContainer" method="_on_upgrade_button_button_down"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="gui_input" from="GeneratorsPanelBackground/GeneratorsContainer/WindTurbineGenerator" to="GeneratorsPanelBackground/GeneratorsContainer/WindTurbineGenerator" method="_on_gui_input"]
 [connection signal="button_down" from="GeneratorsPanelBackground/GeneratorsContainer/WindTurbineGenerator/NumberOwnedAndPointsPerSecondContainer/ShopButton" to="GeneratorsPanelBackground/GeneratorsContainer/WindTurbineGenerator" method="_on_shop_button_button_down"]
@@ -1412,11 +1439,6 @@ horizontal_alignment = 1
 [connection signal="button_down" from="GeneratorsPanelBackground/GeneratorsContainer/SolarPanelGenerator/NumberOwnedAndPointsPerSecondContainer/ShopButton" to="GeneratorsPanelBackground/GeneratorsContainer/SolarPanelGenerator" method="_on_shop_button_button_down"]
 [connection signal="gui_input" from="GeneratorsPanelBackground/GeneratorsContainer/ReforestationGenerator" to="GeneratorsPanelBackground/GeneratorsContainer/ReforestationGenerator" method="_on_gui_input"]
 [connection signal="button_down" from="GeneratorsPanelBackground/GeneratorsContainer/ReforestationGenerator/NumberOwnedAndPointsPerSecondContainer/ShopButton" to="GeneratorsPanelBackground/GeneratorsContainer/ReforestationGenerator" method="_on_shop_button_button_down"]
-[connection signal="gui_input" from="UpgradesPanelBackground/UpgradesContainer/ClickerUpgradeContainer" to="UpgradesPanelBackground/UpgradesContainer/ClickerUpgradeContainer" method="_on_gui_input"]
-[connection signal="button_down" from="UpgradesPanelBackground/UpgradesContainer/ClickerUpgradeContainer/NumberOwnedAndButtonContainer/UpgradeButton" to="UpgradesPanelBackground/UpgradesContainer/ClickerUpgradeContainer" method="_on_upgrade_button_button_down"]
-[connection signal="gui_input" from="UpgradesPanelBackground/UpgradesContainer/WindTurbineUpgradeContainer" to="UpgradesPanelBackground/UpgradesContainer/WindTurbineUpgradeContainer" method="_on_gui_input"]
-[connection signal="gui_input" from="UpgradesPanelBackground/UpgradesContainer/SolarPanelUpgradeContainer" to="UpgradesPanelBackground/UpgradesContainer/SolarPanelUpgradeContainer" method="_on_gui_input"]
-[connection signal="gui_input" from="UpgradesPanelBackground/UpgradesContainer/ReforestationUpgradeContainer" to="UpgradesPanelBackground/UpgradesContainer/ReforestationUpgradeContainer" method="_on_gui_input"]
 [connection signal="gui_input" from="InfoAlerts/WindTurbineInfoAlert" to="InfoAlerts/WindTurbineInfoAlert" method="_on_gui_input"]
 [connection signal="gui_input" from="InfoAlerts/SolarPanelInfoAlert" to="InfoAlerts/SolarPanelInfoAlert" method="_on_gui_input"]
 [connection signal="gui_input" from="InfoAlerts/ReforestationInfoAlert" to="InfoAlerts/ReforestationInfoAlert" method="_on_gui_input"]
