@@ -1,6 +1,13 @@
 extends TextureRect
 
 var allow_continue = false
+var title_node
+var text_node
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	title_node = get_node("EducationalPopupPanel/VBoxContainer/TitleLabel")
+	text_node = get_node("EducationalPopupPanel/VBoxContainer/TextLabel")
 
 func _on_gui_input(event):
 	if (allow_continue and event is InputEventMouseButton):
@@ -10,3 +17,9 @@ func _on_gui_input(event):
 
 func _on_timer_timeout():
 	allow_continue = true
+
+func set_title(title: String):
+	title_node.text = title
+
+func set_text(text: String):
+	text_node.text = text

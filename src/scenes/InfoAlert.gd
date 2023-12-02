@@ -30,5 +30,14 @@ func _process(delta):
 func _on_gui_input(event):
 	if (event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed):
 		self.hide()
+		if (self.name == "WindTurbineInfoAlert"):
+			popup_node.set_title("Wind Turbine")
+			popup_node.set_text("Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text ")
+		elif (self.name == "SolarPanelInfoAlert"):
+			popup_node.set_title("Solar Panel")
+			popup_node.set_text("Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text ")
+		elif (self.name == "ReforestationInfoAlert"):
+			popup_node.set_title("Reforestation")
+			popup_node.set_text("Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text ")
 		popup_timer_node.start(1)
 		popup_node.show()
