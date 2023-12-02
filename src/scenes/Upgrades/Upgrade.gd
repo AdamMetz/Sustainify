@@ -14,6 +14,7 @@ var cost_increase_growth_factor : int = 10
 var upgrade_multiplier : int = 2
 var associated_generator_name : String
 var associated_generator : BaseGenerator
+var main_node 
 
 # Constructor #
 
@@ -22,6 +23,7 @@ func init(upgrade_name : String, associated_generator_name: String,upgrade_cost 
 	self.cost = upgrade_cost
 	self.purchase_limit = upgrade_purchase_limit
 	self.associated_generator_name = associated_generator_name
+	self.main_node = get_node("/root/Main")
 	# Setup label nodes
 	self.set_upgrade_name_label()
 	self.set_cost_label()
@@ -65,21 +67,15 @@ func set_upgrade_name_label():
 	upgrade_name_label_node.text = self.upgrade_name
 	
 func set_number_owned_label():
-	var number_owned_label_node = self.get_node("NumberOwnedLabel")
+	var number_owned_label_node = self.get_node("NumberOwnedAndButtonContainer/NumberOwnedLabel")
 	number_owned_label_node.text = str(self.number_owned) + "/" + str(self.purchase_limit)
 
 # Signals #
-
-func _on_gui_input(event):
-	if (event is InputEventMouseButton):
-		if (event.button_index == MOUSE_BUTTON_LEFT and event.pressed):
-			var main_node = get_node("../../../../Main")
-			if (self.number_owned < self.purchase_limit and main_node.sustainability_points >= self.cost):
-				if self.upgrade_name != "Better Clicks":
-					self.associated_generator.upgrade(upgrade_multiplier)
-				emit_signal("upgrade_purchased", self)
-				update_cost()
-				update_number_owned()
-
-			else:
-				print("Cannot afford") # Debugging
+				
+func _on_upgrade_button_button_down():
+	if (self.number_owned < self.purchase_limit and main_node.sustainability_points >= self.cost):
+		if self.upgrade_name != "Better Clicks":
+			self.associated_generator.upgrade(upgrade_multiplier)
+		emit_signal("upgrade_purchased", self)
+		update_cost()
+		update_number_owned()

@@ -19,7 +19,7 @@ func init(gen_name : String, gen_cost : int, gen_points_per_second : int):
 	self.generator_name = gen_name
 	self.cost = gen_cost
 	self.points_per_second = gen_points_per_second
-	self.main_node = get_node("../../../../Main")
+	self.main_node = get_node("/root/Main")
 	# Setup label nodes
 	self.set_generator_name_label()
 	self.set_cost_label()
@@ -84,16 +84,17 @@ func _on_shop_button_button_down():
 		if (self.generator_name == "Wind Turbine"):
 			if (self.number_owned <= 3):
 				main_node.get_node("Background/WindTurbines/WindTurbine" +str(number_owned)).texture = preload("res://assets/generators/Wind-Turbine.png")
-			main_node.get_node("InfoAlerts/WindTurbineInfoAlert").show()
+			if (self.number_owned == 1):
+				main_node.get_node("InfoAlerts/WindTurbineInfoAlert").show()
 			
 		if (self.generator_name == "Solar Panel"):
 			if (self.number_owned <= 3):
 				main_node.get_node("Background/SolarPanels/SolarPanel" +str(number_owned)).texture = preload("res://assets/generators/SolarPanel.png")
-			main_node.get_node("InfoAlerts/SolarPanelInfoAlert").show()
+			if (self.number_owned == 1):
+				main_node.get_node("InfoAlerts/SolarPanelInfoAlert").show()
 			
 		if (self.generator_name == "Reforestation"):
 			if (self.number_owned <= 3):
 				main_node.get_node("Background/ReforestationTrees/Reforestation" +str(number_owned)).texture = preload("res://assets/environment/Tree-1.png")
-			main_node.get_node("InfoAlerts/ReforestationInfoAlert").show()
-	else:
-		print("Cannot afford") # Debugging
+			if (self.number_owned == 1):
+				main_node.get_node("InfoAlerts/ReforestationInfoAlert").show()
