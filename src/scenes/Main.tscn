@@ -948,7 +948,7 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "$1/click → $2/click"
+text = "$1/click -> $2/click"
 horizontal_alignment = 1
 
 [node name="NumberOwnedAndButtonContainer" type="VBoxContainer" parent="UpgradesPanelBackground/UpgradesContainer/ClickerUpgradeContainer"]
@@ -992,7 +992,7 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "+$5/s → +$10/s"
+text = "+$5/s -> +$10/s"
 horizontal_alignment = 1
 
 [node name="NumberOwnedAndButtonContainer" type="VBoxContainer" parent="UpgradesPanelBackground/UpgradesContainer/WindTurbineUpgradeContainer"]
@@ -1036,7 +1036,7 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "+$20/s → +$40/s"
+text = "+$20/s -> +$40/s"
 horizontal_alignment = 1
 
 [node name="NumberOwnedAndButtonContainer" type="VBoxContainer" parent="UpgradesPanelBackground/UpgradesContainer/SolarPanelUpgradeContainer"]
@@ -1080,7 +1080,7 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "+$50/s → +$100/s"
+text = "+$50/s -> +$100/s"
 horizontal_alignment = 1
 
 [node name="NumberOwnedAndButtonContainer" type="VBoxContainer" parent="UpgradesPanelBackground/UpgradesContainer/ReforestationUpgradeContainer"]

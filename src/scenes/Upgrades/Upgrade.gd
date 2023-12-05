@@ -75,9 +75,9 @@ func set_upgrade_increase_label():
 	var upgrade_increase_label_node = self.get_node("NameAndCostContainer/CostContainer/UpgradeIncreaseLabel")
 	if self.number_owned < purchase_limit:
 		if (self.associated_generator_name != "None"):
-			upgrade_increase_label_node.text = "+$" + str(get_associated_generator().get_points_per_second()) + "/s → +$" + str(get_associated_generator().get_points_per_second() * 2) + "/s"
+			upgrade_increase_label_node.text = "+$" + str(get_associated_generator().get_points_per_second()) + "/s -> +$" + str(get_associated_generator().get_points_per_second() * 2) + "/s"
 		else:
-			upgrade_increase_label_node.text = "+$" + str(2 ** self.number_owned) + "/click → +$" + str(2 ** (self.number_owned+1)) + "/click"
+			upgrade_increase_label_node.text = "+$" + str(2 ** self.number_owned) + "/click -> +$" + str(2 ** (self.number_owned+1)) + "/click"
 	else:
 		upgrade_increase_label_node.text = "MAX LEVEL"
 		upgrade_increase_label_node.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
