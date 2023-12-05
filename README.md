@@ -25,3 +25,10 @@ The following assets are from ["UI Assets Pack 2"](https://srtoasty.itch.io/ui-a
 
 The following assets are from [PixelArtMaker](https://pixelartmaker.com/art/cc4b4c41e81d81c)
  - SolarPanel.png
+
+# Educational Information Sources
+
+ - https://kids.earth.org/climate-change/what-is-wind-energy/
+ - https://kids.earth.org/climate-change/what-is-solar-energy/
+ - https://www.britannica.com/science/reforestation
+ - https://kids.britannica.com/kids/article/wind-power/574607
