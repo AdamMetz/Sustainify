@@ -1336,6 +1336,10 @@ offset_bottom = 392.0
 texture = ExtResource("23_puf5v")
 script = ExtResource("23_6gd2c")
 
+[node name="Timer" type="Timer" parent="InfoAlerts/WindTurbineInfoAlert"]
+wait_time = 20.0
+autostart = true
+
 [node name="SolarPanelInfoAlert" type="TextureRect" parent="InfoAlerts"]
 visible = false
 layout_mode = 0
@@ -1345,6 +1349,10 @@ offset_right = 576.0
 offset_bottom = 336.0
 texture = ExtResource("23_puf5v")
 script = ExtResource("23_6gd2c")
+
+[node name="Timer" type="Timer" parent="InfoAlerts/SolarPanelInfoAlert"]
+wait_time = 34.0
+autostart = true
 
 [node name="ReforestationInfoAlert" type="TextureRect" parent="InfoAlerts"]
 visible = false
@@ -1356,7 +1364,12 @@ offset_bottom = 424.0
 texture = ExtResource("23_puf5v")
 script = ExtResource("23_6gd2c")
 
+[node name="Timer" type="Timer" parent="InfoAlerts/ReforestationInfoAlert"]
+wait_time = 51.0
+autostart = true
+
 [node name="EducationalPopup" type="TextureRect" parent="."]
+visible = false
 layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
@@ -1401,10 +1414,17 @@ velit
 "
 autowrap_mode = 2
 
-[node name="LinkButton" type="LinkButton" parent="EducationalPopup/EducationalPopupPanel/VBoxContainer"]
+[node name="SourceLinkButton" type="LinkButton" parent="EducationalPopup/EducationalPopupPanel"]
 layout_mode = 2
+offset_left = 104.0
+offset_top = 256.0
+offset_right = 154.0
+offset_bottom = 272.0
+theme_override_colors/font_color = Color(0, 0, 0.721569, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.537255, 0.0470588, 0.768627, 1)
+theme_override_fonts/font = ExtResource("3_0avik")
 text = "Source"
-uri = "https://docs.godotengine.org/en/stable/classes/class_label.html#class-label-property-horizontal-alignment"
 
 [node name="HSeparator" type="HSeparator" parent="EducationalPopup/EducationalPopupPanel"]
 layout_mode = 2
@@ -1441,7 +1461,10 @@ horizontal_alignment = 1
 [connection signal="gui_input" from="GeneratorsPanelBackground/GeneratorsContainer/ReforestationGenerator" to="GeneratorsPanelBackground/GeneratorsContainer/ReforestationGenerator" method="_on_gui_input"]
 [connection signal="button_down" from="GeneratorsPanelBackground/GeneratorsContainer/ReforestationGenerator/NumberOwnedAndPointsPerSecondContainer/ShopButton" to="GeneratorsPanelBackground/GeneratorsContainer/ReforestationGenerator" method="_on_shop_button_button_down"]
 [connection signal="gui_input" from="InfoAlerts/WindTurbineInfoAlert" to="InfoAlerts/WindTurbineInfoAlert" method="_on_gui_input"]
+[connection signal="timeout" from="InfoAlerts/WindTurbineInfoAlert/Timer" to="InfoAlerts/WindTurbineInfoAlert" method="_on_timer_timeout"]
 [connection signal="gui_input" from="InfoAlerts/SolarPanelInfoAlert" to="InfoAlerts/SolarPanelInfoAlert" method="_on_gui_input"]
+[connection signal="timeout" from="InfoAlerts/SolarPanelInfoAlert/Timer" to="InfoAlerts/SolarPanelInfoAlert" method="_on_timer_timeout"]
 [connection signal="gui_input" from="InfoAlerts/ReforestationInfoAlert" to="InfoAlerts/ReforestationInfoAlert" method="_on_gui_input"]
+[connection signal="timeout" from="InfoAlerts/ReforestationInfoAlert/Timer" to="InfoAlerts/ReforestationInfoAlert" method="_on_timer_timeout"]
 [connection signal="gui_input" from="EducationalPopup" to="EducationalPopup" method="_on_gui_input"]
 [connection signal="timeout" from="EducationalPopup/Timer" to="EducationalPopup" method="_on_timer_timeout"]
