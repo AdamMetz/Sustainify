@@ -4,4 +4,4 @@ class_name SolarPanelGenerator
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	self.init("Solar Panel", 1, 20)
+	self.init("Solar Panel", 50, 20)
