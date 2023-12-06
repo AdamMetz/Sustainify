@@ -28,7 +28,6 @@ func init(upgrade_name : String, associated_generator_name: String,upgrade_cost 
 	self.set_upgrade_name_label()
 	self.set_cost_label()
 	self.set_number_owned_label()
-	#self.set_upgrade_increase_label()
 
 # Setters & Getters #
 
