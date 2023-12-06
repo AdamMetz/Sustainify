@@ -1337,7 +1337,7 @@ texture = ExtResource("23_puf5v")
 script = ExtResource("23_6gd2c")
 
 [node name="Timer" type="Timer" parent="InfoAlerts/WindTurbineInfoAlert"]
-wait_time = 20.0
+wait_time = 40.0
 autostart = true
 
 [node name="SolarPanelInfoAlert" type="TextureRect" parent="InfoAlerts"]
@@ -1351,7 +1351,7 @@ texture = ExtResource("23_puf5v")
 script = ExtResource("23_6gd2c")
 
 [node name="Timer" type="Timer" parent="InfoAlerts/SolarPanelInfoAlert"]
-wait_time = 34.0
+wait_time = 68.0
 autostart = true
 
 [node name="ReforestationInfoAlert" type="TextureRect" parent="InfoAlerts"]
@@ -1365,7 +1365,7 @@ texture = ExtResource("23_puf5v")
 script = ExtResource("23_6gd2c")
 
 [node name="Timer" type="Timer" parent="InfoAlerts/ReforestationInfoAlert"]
-wait_time = 51.0
+wait_time = 102.0
 autostart = true
 
 [node name="EducationalPopup" type="TextureRect" parent="."]
